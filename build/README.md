@@ -9,6 +9,7 @@ This Gulp implementation is an ongoing conversion of Bootstrap's Grunt build pro
 - [x] Sass Compilation
    - [x] Sourcemaps
    - [x] Autoprefixer
+   - [x] Like-for-like autoprefixing (within reason)
    - [x] Sass Processing
    - [x] SCSS Lint
 - [ ] Javascript Compilation
@@ -18,10 +19,21 @@ This Gulp implementation is an ongoing conversion of Bootstrap's Grunt build pro
    - [ ] Remove dependance on Bower, bring jQuery and Tether into NPM
 - [ ] Jekyll Integration for Docs
 
+## Installation & Setup
+
+Very simply, all that needs to be done is to install the dependencies via NPM, and then use the tasks outlined in the section below to build the source files as required.
+
+```
+npm install
+```
+
+```
+gulp <task>
+```
 
 ## Build Task Overview
 
-**Run**
+###Run
 
 `gulp run` - Runs the `test` and `build` tasks.
 
@@ -29,7 +41,7 @@ This Gulp implementation is an ongoing conversion of Bootstrap's Grunt build pro
 
 `gulp run-scripts` - Runs the `test-scripts` and `build-scripts` tasks.
 
-**Test**
+###Test
 
 `gulp test` - Runs the `test-styles` and `test-scripts` tasks.
 
@@ -37,15 +49,15 @@ This Gulp implementation is an ongoing conversion of Bootstrap's Grunt build pro
 
 `gulp test-scripts` - Currently this task does not run any processes
 
-**Build**
+###Build
 
 `gulp build` - Runs the `build-styles` and `build-scripts` tasks.
 
-`gulp build-styles` - Runs the `clean-styles` task, and then compiles the SCSS with **Sourcemaps**, **Autoprefixer**, **Sass**, and **MinifyCss**
+`gulp build-styles` - Runs the `clean-styles` task, and then compiles the SCSS with the `styles-build` and `styles-minify` tasks.
 
 `gulp build-scripts` - Runs the `clean-scripts` task, and then compiles the JavaScript files in `js/src` with **Babel**, then concatenates the `bootstrap.js` file.
 
-**Clean**
+###Clean
 
 `gulp clean` - Runs the `clean-styles` and `clean-scripts` tasks. This is currently unused in our workflow.
 
@@ -53,6 +65,14 @@ This Gulp implementation is an ongoing conversion of Bootstrap's Grunt build pro
 
 `gulp clean-scripts` - Deletes all compiled JavaScript files using **Vinyl Paths** and **Del**.
 
-**Jekyll**
+### Styles
+
+**These tasks are not designed to be ran independantly - they are simply use to abstract functionality from cluttered files**
+
+`gulp styles-build` - Compiles the SCSS with **Sourcemaps**, **Autoprefixer**, and **Sass**.
+
+`gulp styles-minify` - Minifies the CSS created with `styles-build` with **MinifyCss**.
+
+###Jekyll
 
 _There are currently no complete Jekyll tasks._
