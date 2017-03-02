@@ -3,8 +3,8 @@ var runSequence = require('run-sequence');
 // This loads all plugins from our project dependencies into the $ variable.
 // No need to include them all here.
 var $ = require('gulp-load-plugins')();
-
 var paths = require('../paths');
+
 
 gulp.task('build', function(callback) {
   return runSequence(
@@ -14,24 +14,12 @@ gulp.task('build', function(callback) {
 });
 
 // copies changed scss files to the output directory, with sourcemaps
-gulp.task('build-styles', ['clean-styles'], function() {
-  return gulp.src(paths.scssSource)
-    .pipe($.plumber())
-    .pipe($.sourcemaps.init({loadMaps: true}))
-    .pipe(
-      $.sass({
-        outputStyle: 'compressed'
-      }).on("error", $.notify.onError(function (error) {
-            return "Error: " + error.message;
-      })))
-    .pipe($.autoprefixer({
-      browsers: ['> 1%', 'last 2 versions', 'Firefox >= 20'],
-    }))
-    .pipe($.sourcemaps.write('.', {includeContent: false, sourceRoot: '/src'}))
-    .pipe($.rename({ suffix: '.min' }))
-    .pipe(gulp.dest(paths.cssOut))
-    .pipe($.minifyCss())
-    .pipe(gulp.dest(paths.cssOut));
+gulp.task('build-styles', ['clean-styles'], function(callback) {
+  return runSequence(
+    'styles-build',
+    'styles-minify',
+    callback
+  )
 });
 
 gulp.task('build-scripts', ['clean-scripts'], function() {

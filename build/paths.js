@@ -9,5 +9,5 @@ module.exports = {
   jsOut: outputRoot + 'js/',
   output: outputRoot,
   scssLintConfig: 'scss/.scss-lint.yml',
-  jekyllConfig: '.config.yml'
+  jekyllConfig: '_config.yml'
 };
