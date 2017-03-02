@@ -1,0 +1,26 @@
+var gulp = require('gulp');
+var runSequence = require('run-sequence');
+
+gulp.task('run', function(callback) {
+  return runSequence(
+    'test',
+    'build',
+    callback
+  );
+});
+
+gulp.task('run-styles', function(callback) {
+  return runSequence(
+    'test-styles',
+    'build-styles',
+    callback
+  );
+});
+
+gulp.task('run-scripts', function(callback) {
+  return runSequence(
+    'test-scripts',
+    'build-scripts',
+    callback
+  );
+});
