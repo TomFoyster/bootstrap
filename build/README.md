@@ -15,6 +15,8 @@ This Gulp implementation is an ongoing conversion of Bootstrap's Grunt build pro
    - [x] Babel Compilation
    - [ ] ESLint Integration
    - [ ] QUnit Integration
+   - [ ] Remove dependance on Bower, bring jQuery and Tether into NPM
+- [ ] Jekyll Integration for Docs
 
 
 ## Build Task Overview
