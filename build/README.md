@@ -9,7 +9,7 @@ This Gulp implementation is an ongoing conversion of Bootstrap's Grunt build pro
 - [x] Sass Compilation
    - [x] Sourcemaps
    - [x] Autoprefixer
-   - [ ] Integrate the postcss-flexbugs-fixes module
+   - [x] Integrate the postcss-flexbugs-fixes module
    - [x] Like-for-like autoprefixing (within reason)
    - [x] Sass Processing
    - [x] SCSS Lint
