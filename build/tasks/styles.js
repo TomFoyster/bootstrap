@@ -2,6 +2,7 @@ var gulp = require('gulp');
 // This loads all plugins from our project dependencies into the $ variable.
 // No need to include them all here.
 var $ = require('gulp-load-plugins')();
+var postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 var paths = require('../paths');
 var autoPrefixConfig = require('../config/postcss');
 
@@ -15,6 +16,7 @@ gulp.task('styles-build', function() {
             return "Error: " + error.message;
       })))
     .pipe($.autoprefixer(autoPrefixConfig.autoprefixer))
+    .pipe($.postcss([postcssFlexbugsFixes()]))
     .pipe($.sourcemaps.write('.', {includeContent: false, sourceRoot: '/src'}))
     .pipe(gulp.dest(paths.cssOut))
 })
