@@ -1,8 +1,8 @@
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
-var notify = require('gulp-notify');
-var scsslint = require('gulp-scss-lint');
-var eslint = require('gulp-eslint');
+// This loads all plugins from our project dependencies into the $ variable.
+// No need to include them all here.
+var $ = require('gulp-load-plugins')();
 
 var paths = require('../paths');
 

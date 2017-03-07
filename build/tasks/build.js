@@ -5,7 +5,6 @@ var runSequence = require('run-sequence');
 var $ = require('gulp-load-plugins')();
 var paths = require('../paths');
 
-
 gulp.task('build', function(callback) {
   return runSequence(
     ['build-styles', 'build-scripts'],
@@ -22,9 +21,9 @@ gulp.task('build-styles', ['clean-styles'], function(callback) {
   )
 });
 
-gulp.task('build-scripts', ['clean-scripts'], function() {
-  return gulp.src(['js/src/util.js', 'js/src/alert.js', 'js/src/button.js', 'js/src/carousel.js', 'js/src/collapse.js', 'js/src/dropdown.js', 'js/src/modal.js', 'js/src/scrollspy.js', 'js/src/tab.js', 'js/src/tooltip.js', 'js/src/popover.js'])
-    .pipe($.babel())
-    .pipe($.concat('./bootstrap.js'))
-    .pipe(gulp.dest(paths.jsOut));
+gulp.task('build-scripts', ['clean-scripts'], function(callback) {
+  return runSequence(
+    'scripts-build',
+    callback
+  )
 })
