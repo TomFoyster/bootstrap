@@ -40,29 +40,40 @@ var jqueryVersionCheck = '+function ($) {\n' +
                       '}(jQuery);\n\n';
 
 
-var bannerInsert = banner + '\n' + jqueryCheck + '\n' + jqueryVersionCheck + '\n+function () {\n';
-var footerInsert = '\n}();';
+var bannerInsert = banner + '\n' + jqueryCheck + '\n' + jqueryVersionCheck + '\n+function () {\n\n';
+var footerInsert = '\n\n}();';
 
 
-gulp.task('scripts-build-src', function() {
-  return gulp.src(['js/dist/util.js', 'js/dist/alert.js', 'js/dist/button.js', 'js/dist/carousel.js', 'js/dist/collapse.js', 'js/dist/dropdown.js', 'js/dist/modal.js', 'js/dist/scrollspy.js', 'js/dist/tab.js', 'js/dist/tooltip.js', 'js/dist/popover.js'])
+gulp.task('scripts-babel-src', function() {
+  return gulp.src(['js/src/util.js', 'js/src/alert.js', 'js/src/button.js', 'js/src/carousel.js', 'js/src/collapse.js', 'js/src/dropdown.js', 'js/src/modal.js', 'js/src/scrollspy.js', 'js/src/tab.js', 'js/src/tooltip.js', 'js/src/popover.js'])
     .pipe($.sourcemaps.init())
-    .pipe($.babel({extends: '../../js/.babelrc'}))
+    .pipe($.babel())
     .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('js/src'));
+    .pipe(gulp.dest('js/dist'));
 })
 
 gulp.task('scripts-build-dist', function() {
   return gulp.src(['js/src/util.js', 'js/src/alert.js', 'js/src/button.js', 'js/src/carousel.js', 'js/src/collapse.js', 'js/src/dropdown.js', 'js/src/modal.js', 'js/src/scrollspy.js', 'js/src/tab.js', 'js/src/tooltip.js', 'js/src/popover.js'])
-    .pipe($.concat('./bootstrap.js'))
+    .pipe($.concatUtil(pkg.name + '.js', {
+      process: function (src) {
+        return src.replace(/^(export|import).*/gm, '')
+      }
+    }))
+    .pipe(gulp.dest(paths.jsOut));
+})
+
+gulp.task('scripts-babel-dist', function() {
+  return gulp.src(paths.jsOut + pkg.name + '.js')
+    .pipe($.babel({extends: '../../js/.babelrc'}))
     .pipe($.insert.wrap(bannerInsert, footerInsert))
     .pipe(gulp.dest(paths.jsOut));
 })
 
 gulp.task('scripts-build', function(callback) {
   return runSequence(
-    'scripts-build-src',
-    /*'scripts-build-dist',*/
+    'scripts-babel-src',
+    'scripts-build-dist',
+    'scripts-babel-dist',
     callback
   )
 })
