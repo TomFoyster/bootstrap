@@ -71,7 +71,7 @@ gulp.task('scripts-babel-dist', function() {
 
 gulp.task('scripts-uglify-dist', function() {
   return gulp.src(paths.jsOut + pkg.name + '.js')
-    .pipe($.uglify())
+    .pipe($.uglify({output: {comments: /^!/i}}))
     .pipe($.rename({ suffix: '.min' }))
     .pipe(gulp.dest(paths.jsOut));
 })
