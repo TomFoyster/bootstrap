@@ -93,9 +93,7 @@ const Dropdown = (($) => {
    * ------------------------------------------------------------------------
    */
 
-  var Dropdown = function () {
-    function Dropdown(element) {
-      _classCallCheck(this, Dropdown);
+  class Dropdown {
 
     constructor(element, config) {
       this._element  = element
@@ -104,8 +102,9 @@ const Dropdown = (($) => {
       this._menu     = this._getMenuElement()
       this._inNavbar = this._detectNavbar()
 
-      this._addEventListeners();
+      this._addEventListeners()
     }
+
 
     // getters
 
@@ -131,7 +130,7 @@ const Dropdown = (($) => {
       const parent   = Dropdown._getParentFromElement(this._element)
       const isActive = $(this._menu).hasClass(ClassName.SHOW)
 
-      Dropdown._clearMenus();
+      Dropdown._clearMenus()
 
       if (isActive) {
         return
@@ -142,7 +141,7 @@ const Dropdown = (($) => {
       }
       const showEvent = $.Event(Event.SHOW, relatedTarget)
 
-      $(parent).trigger(showEvent);
+      $(parent).trigger(showEvent)
 
       if (showEvent.isDefaultPrevented()) {
         return
@@ -277,7 +276,7 @@ const Dropdown = (($) => {
 
     // static
 
-    Dropdown._jQueryInterface = function _jQueryInterface(config) {
+    static _jQueryInterface(config) {
       return this.each(function () {
         let data = $(this).data(DATA_KEY)
         const _config = typeof config === 'object' ? config : null
@@ -289,12 +288,12 @@ const Dropdown = (($) => {
 
         if (typeof config === 'string') {
           if (data[config] === undefined) {
-            throw new Error('No method named "' + config + '"');
+            throw new Error(`No method named "${config}"`)
           }
           data[config]()
         }
-      });
-    };
+      })
+    }
 
     static _clearMenus(event) {
       if (event && (event.which === RIGHT_MOUSE_BUTTON_WHICH ||
@@ -316,7 +315,7 @@ const Dropdown = (($) => {
 
         const dropdownMenu = context._menu
         if (!$(parent).hasClass(ClassName.SHOW)) {
-          continue;
+          continue
         }
 
         if (event && (event.type === 'click' &&
@@ -325,10 +324,10 @@ const Dropdown = (($) => {
           continue
         }
 
-        var hideEvent = $.Event(Event.HIDE, relatedTarget);
-        $(parent).trigger(hideEvent);
+        const hideEvent = $.Event(Event.HIDE, relatedTarget)
+        $(parent).trigger(hideEvent)
         if (hideEvent.isDefaultPrevented()) {
-          continue;
+          continue
         }
 
         // if this is a touch-enabled device we remove the extra
@@ -344,18 +343,18 @@ const Dropdown = (($) => {
           .removeClass(ClassName.SHOW)
           .trigger($.Event(Event.HIDDEN, relatedTarget))
       }
-    };
+    }
 
-    Dropdown._getParentFromElement = function _getParentFromElement(element) {
-      var parent = void 0;
-      var selector = Util.getSelectorFromElement(element);
+    static _getParentFromElement(element) {
+      let parent
+      const selector = Util.getSelectorFromElement(element)
 
       if (selector) {
-        parent = $(selector)[0];
+        parent = $(selector)[0]
       }
 
-      return parent || element.parentNode;
-    };
+      return parent || element.parentNode
+    }
 
     static _dataApiKeydownHandler(event) {
       if (!REGEXP_KEYDOWN.test(event.which) || /button/i.test(event.target.tagName) && event.which === SPACE_KEYCODE ||
@@ -363,62 +362,53 @@ const Dropdown = (($) => {
         return
       }
 
-      event.preventDefault();
-      event.stopPropagation();
+      event.preventDefault()
+      event.stopPropagation()
 
       if (this.disabled || $(this).hasClass(ClassName.DISABLED)) {
-        return;
+        return
       }
 
-      var parent = Dropdown._getParentFromElement(this);
-      var isActive = $(parent).hasClass(ClassName.SHOW);
+      const parent   = Dropdown._getParentFromElement(this)
+      const isActive = $(parent).hasClass(ClassName.SHOW)
 
       if (!isActive && (event.which !== ESCAPE_KEYCODE || event.which !== SPACE_KEYCODE) ||
            isActive && (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE)) {
 
         if (event.which === ESCAPE_KEYCODE) {
-          var toggle = $(parent).find(Selector.DATA_TOGGLE)[0];
-          $(toggle).trigger('focus');
+          const toggle = $(parent).find(Selector.DATA_TOGGLE)[0]
+          $(toggle).trigger('focus')
         }
 
-        $(this).trigger('click');
-        return;
+        $(this).trigger('click')
+        return
       }
 
-      var items = $(parent).find(Selector.VISIBLE_ITEMS).get();
+      const items = $(parent).find(Selector.VISIBLE_ITEMS).get()
 
       if (!items.length) {
-        return;
+        return
       }
 
-      var index = items.indexOf(event.target);
+      let index = items.indexOf(event.target)
 
-      if (event.which === ARROW_UP_KEYCODE && index > 0) {
-        // up
-        index--;
+      if (event.which === ARROW_UP_KEYCODE && index > 0) { // up
+        index--
       }
 
-      if (event.which === ARROW_DOWN_KEYCODE && index < items.length - 1) {
-        // down
-        index++;
+      if (event.which === ARROW_DOWN_KEYCODE && index < items.length - 1) { // down
+        index++
       }
 
       if (index < 0) {
-        index = 0;
+        index = 0
       }
 
-      items[index].focus();
-    };
+      items[index].focus()
+    }
 
-    _createClass(Dropdown, null, [{
-      key: 'VERSION',
-      get: function get() {
-        return VERSION;
-      }
-    }]);
+  }
 
-    return Dropdown;
-  }();
 
   /**
    * ------------------------------------------------------------------------
@@ -446,14 +436,15 @@ const Dropdown = (($) => {
    * ------------------------------------------------------------------------
    */
 
-  $.fn[NAME] = Dropdown._jQueryInterface;
-  $.fn[NAME].Constructor = Dropdown;
-  $.fn[NAME].noConflict = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT;
-    return Dropdown._jQueryInterface;
-  };
+  $.fn[NAME]             = Dropdown._jQueryInterface
+  $.fn[NAME].Constructor = Dropdown
+  $.fn[NAME].noConflict  = function () {
+    $.fn[NAME] = JQUERY_NO_CONFLICT
+    return Dropdown._jQueryInterface
+  }
 
-  return Dropdown;
-}(jQuery);
-//# sourceMappingURL=dropdown.js.map
-//# sourceMappingURL=dropdown.js.map
+  return Dropdown
+
+})(jQuery)
+
+export default Dropdown
