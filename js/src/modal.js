@@ -1,5 +1,26 @@
-import Util from './util'
+var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
+var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol" ? function (obj) {
+  return typeof obj === "undefined" ? "undefined" : _typeof2(obj);
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof2(obj);
+};
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+  };
+}();
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
 
 /**
  * --------------------------------------------------------------------------
@@ -8,8 +29,7 @@ import Util from './util'
  * --------------------------------------------------------------------------
  */
 
-const Modal = (($) => {
-
+var Modal = function ($) {
 
   /**
    * ------------------------------------------------------------------------
@@ -92,25 +112,17 @@ const Modal = (($) => {
       this._scrollbarWidth      = 0
     }
 
-
     // getters
-
-    static get VERSION() {
-      return VERSION
-    }
-
-    static get Default() {
-      return Default
-    }
-
 
     // public
 
-    toggle(relatedTarget) {
-      return this._isShown ? this.hide() : this.show(relatedTarget)
-    }
+    Modal.prototype.toggle = function toggle(relatedTarget) {
+      return this._isShown ? this.hide() : this.show(relatedTarget);
+    };
 
-    show(relatedTarget) {
+    Modal.prototype.show = function show(relatedTarget) {
+      var _this = this;
+
       if (this._isTransitioning) {
         return
       }
@@ -123,42 +135,44 @@ const Modal = (($) => {
         relatedTarget
       })
 
-      $(this._element).trigger(showEvent)
+      $(this._element).trigger(showEvent);
 
       if (this._isShown || showEvent.isDefaultPrevented()) {
-        return
+        return;
       }
 
-      this._isShown = true
+      this._isShown = true;
 
-      this._checkScrollbar()
-      this._setScrollbar()
+      this._checkScrollbar();
+      this._setScrollbar();
 
-      $(document.body).addClass(ClassName.OPEN)
+      $(document.body).addClass(ClassName.OPEN);
 
-      this._setEscapeEvent()
-      this._setResizeEvent()
+      this._setEscapeEvent();
+      this._setResizeEvent();
 
-      $(this._element).on(
-        Event.CLICK_DISMISS,
-        Selector.DATA_DISMISS,
-        (event) => this.hide(event)
-      )
+      $(this._element).on(Event.CLICK_DISMISS, Selector.DATA_DISMISS, function (event) {
+        return _this.hide(event);
+      });
 
-      $(this._dialog).on(Event.MOUSEDOWN_DISMISS, () => {
-        $(this._element).one(Event.MOUSEUP_DISMISS, (event) => {
-          if ($(event.target).is(this._element)) {
-            this._ignoreBackdropClick = true
+      $(this._dialog).on(Event.MOUSEDOWN_DISMISS, function () {
+        $(_this._element).one(Event.MOUSEUP_DISMISS, function (event) {
+          if ($(event.target).is(_this._element)) {
+            _this._ignoreBackdropClick = true;
           }
-        })
-      })
+        });
+      });
 
-      this._showBackdrop(() => this._showElement(relatedTarget))
-    }
+      this._showBackdrop(function () {
+        return _this._showElement(relatedTarget);
+      });
+    };
 
-    hide(event) {
+    Modal.prototype.hide = function hide(event) {
+      var _this2 = this;
+
       if (event) {
-        event.preventDefault()
+        event.preventDefault();
       }
 
       if (this._isTransitioning || !this._isShown) {
@@ -168,7 +182,7 @@ const Modal = (($) => {
       const transition = Util.supportsTransitionEnd() && $(this._element).hasClass(ClassName.FADE)
 
       if (transition) {
-        this._isTransitioning = true
+        this._isTransitioning = true;
       }
 
       const hideEvent = $.Event(Event.HIDE)
@@ -176,20 +190,20 @@ const Modal = (($) => {
       $(this._element).trigger(hideEvent)
 
       if (!this._isShown || hideEvent.isDefaultPrevented()) {
-        return
+        return;
       }
 
-      this._isShown = false
+      this._isShown = false;
 
-      this._setEscapeEvent()
-      this._setResizeEvent()
+      this._setEscapeEvent();
+      this._setResizeEvent();
 
-      $(document).off(Event.FOCUSIN)
+      $(document).off(Event.FOCUSIN);
 
-      $(this._element).removeClass(ClassName.SHOW)
+      $(this._element).removeClass(ClassName.SHOW);
 
-      $(this._element).off(Event.CLICK_DISMISS)
-      $(this._dialog).off(Event.MOUSEDOWN_DISMISS)
+      $(this._element).off(Event.CLICK_DISMISS);
+      $(this._dialog).off(Event.MOUSEDOWN_DISMISS);
 
       if (transition) {
 
@@ -197,12 +211,12 @@ const Modal = (($) => {
           .one(Util.TRANSITION_END, (event) => this._hideModal(event))
           .emulateTransitionEnd(TRANSITION_DURATION)
       } else {
-        this._hideModal()
+        this._hideModal();
       }
-    }
+    };
 
-    dispose() {
-      $.removeData(this._element, DATA_KEY)
+    Modal.prototype.dispose = function dispose() {
+      $.removeData(this._element, DATA_KEY);
 
       $(window, document, this._element, this._backdrop).off(EVENT_KEY)
 
@@ -222,88 +236,88 @@ const Modal = (($) => {
 
     // private
 
-    _getConfig(config) {
-      config = $.extend({}, Default, config)
-      Util.typeCheckConfig(NAME, config, DefaultType)
-      return config
-    }
+    Modal.prototype._getConfig = function _getConfig(config) {
+      config = $.extend({}, Default, config);
+      Util.typeCheckConfig(NAME, config, DefaultType);
+      return config;
+    };
 
-    _showElement(relatedTarget) {
-      const transition = Util.supportsTransitionEnd() &&
-        $(this._element).hasClass(ClassName.FADE)
+    Modal.prototype._showElement = function _showElement(relatedTarget) {
+      var _this3 = this;
 
-      if (!this._element.parentNode ||
-         this._element.parentNode.nodeType !== Node.ELEMENT_NODE) {
+      var transition = Util.supportsTransitionEnd() && $(this._element).hasClass(ClassName.FADE);
+
+      if (!this._element.parentNode || this._element.parentNode.nodeType !== Node.ELEMENT_NODE) {
         // don't move modals dom position
-        document.body.appendChild(this._element)
+        document.body.appendChild(this._element);
       }
 
-      this._element.style.display = 'block'
-      this._element.removeAttribute('aria-hidden')
-      this._element.scrollTop = 0
+      this._element.style.display = 'block';
+      this._element.removeAttribute('aria-hidden');
+      this._element.scrollTop = 0;
 
       if (transition) {
-        Util.reflow(this._element)
+        Util.reflow(this._element);
       }
 
-      $(this._element).addClass(ClassName.SHOW)
+      $(this._element).addClass(ClassName.SHOW);
 
       if (this._config.focus) {
-        this._enforceFocus()
+        this._enforceFocus();
       }
 
-      const shownEvent = $.Event(Event.SHOWN, {
-        relatedTarget
-      })
+      var shownEvent = $.Event(Event.SHOWN, {
+        relatedTarget: relatedTarget
+      });
 
-      const transitionComplete = () => {
-        if (this._config.focus) {
-          this._element.focus()
+      var transitionComplete = function transitionComplete() {
+        if (_this3._config.focus) {
+          _this3._element.focus();
         }
-        this._isTransitioning = false
-        $(this._element).trigger(shownEvent)
-      }
+        _this3._isTransitioning = false;
+        $(_this3._element).trigger(shownEvent);
+      };
 
       if (transition) {
-        $(this._dialog)
-          .one(Util.TRANSITION_END, transitionComplete)
-          .emulateTransitionEnd(TRANSITION_DURATION)
+        $(this._dialog).one(Util.TRANSITION_END, transitionComplete).emulateTransitionEnd(TRANSITION_DURATION);
       } else {
-        transitionComplete()
+        transitionComplete();
       }
-    }
+    };
 
-    _enforceFocus() {
-      $(document)
-        .off(Event.FOCUSIN) // guard against infinite focus loop
-        .on(Event.FOCUSIN, (event) => {
-          if (document !== event.target &&
-              this._element !== event.target &&
-              !$(this._element).has(event.target).length) {
-            this._element.focus()
-          }
-        })
-    }
+    Modal.prototype._enforceFocus = function _enforceFocus() {
+      var _this4 = this;
 
-    _setEscapeEvent() {
+      $(document).off(Event.FOCUSIN) // guard against infinite focus loop
+      .on(Event.FOCUSIN, function (event) {
+        if (document !== event.target && _this4._element !== event.target && !$(_this4._element).has(event.target).length) {
+          _this4._element.focus();
+        }
+      });
+    };
+
+    Modal.prototype._setEscapeEvent = function _setEscapeEvent() {
+      var _this5 = this;
+
       if (this._isShown && this._config.keyboard) {
-        $(this._element).on(Event.KEYDOWN_DISMISS, (event) => {
+        $(this._element).on(Event.KEYDOWN_DISMISS, function (event) {
           if (event.which === ESCAPE_KEYCODE) {
             event.preventDefault()
             this.hide()
           }
-        })
-
+        });
       } else if (!this._isShown) {
-        $(this._element).off(Event.KEYDOWN_DISMISS)
+        $(this._element).off(Event.KEYDOWN_DISMISS);
       }
-    }
+    };
 
-    _setResizeEvent() {
+    Modal.prototype._setResizeEvent = function _setResizeEvent() {
+      var _this6 = this;
+
       if (this._isShown) {
         $(window).on(Event.RESIZE, (event) => this.handleUpdate(event))
       } else {
-        $(window).off(Event.RESIZE)
+        $(window).off(Event.RESIZE);
       }
     }
 
@@ -321,85 +335,78 @@ const Modal = (($) => {
 
     _removeBackdrop() {
       if (this._backdrop) {
-        $(this._backdrop).remove()
-        this._backdrop = null
+        $(this._backdrop).remove();
+        this._backdrop = null;
       }
-    }
+    };
 
-    _showBackdrop(callback) {
-      const animate = $(this._element).hasClass(ClassName.FADE) ?
-        ClassName.FADE : ''
+    Modal.prototype._showBackdrop = function _showBackdrop(callback) {
+      var _this8 = this;
+
+      var animate = $(this._element).hasClass(ClassName.FADE) ? ClassName.FADE : '';
 
       if (this._isShown && this._config.backdrop) {
-        const doAnimate = Util.supportsTransitionEnd() && animate
+        var doAnimate = Util.supportsTransitionEnd() && animate;
 
-        this._backdrop = document.createElement('div')
-        this._backdrop.className = ClassName.BACKDROP
+        this._backdrop = document.createElement('div');
+        this._backdrop.className = ClassName.BACKDROP;
 
         if (animate) {
-          $(this._backdrop).addClass(animate)
+          $(this._backdrop).addClass(animate);
         }
 
-        $(this._backdrop).appendTo(document.body)
+        $(this._backdrop).appendTo(document.body);
 
-        $(this._element).on(Event.CLICK_DISMISS, (event) => {
-          if (this._ignoreBackdropClick) {
-            this._ignoreBackdropClick = false
-            return
+        $(this._element).on(Event.CLICK_DISMISS, function (event) {
+          if (_this8._ignoreBackdropClick) {
+            _this8._ignoreBackdropClick = false;
+            return;
           }
           if (event.target !== event.currentTarget) {
-            return
+            return;
           }
-          if (this._config.backdrop === 'static') {
-            this._element.focus()
+          if (_this8._config.backdrop === 'static') {
+            _this8._element.focus();
           } else {
-            this.hide()
+            _this8.hide();
           }
-        })
+        });
 
         if (doAnimate) {
-          Util.reflow(this._backdrop)
+          Util.reflow(this._backdrop);
         }
 
-        $(this._backdrop).addClass(ClassName.SHOW)
+        $(this._backdrop).addClass(ClassName.SHOW);
 
         if (!callback) {
-          return
+          return;
         }
 
         if (!doAnimate) {
-          callback()
-          return
+          callback();
+          return;
         }
 
-        $(this._backdrop)
-          .one(Util.TRANSITION_END, callback)
-          .emulateTransitionEnd(BACKDROP_TRANSITION_DURATION)
-
+        $(this._backdrop).one(Util.TRANSITION_END, callback).emulateTransitionEnd(BACKDROP_TRANSITION_DURATION);
       } else if (!this._isShown && this._backdrop) {
-        $(this._backdrop).removeClass(ClassName.SHOW)
+        $(this._backdrop).removeClass(ClassName.SHOW);
 
-        const callbackRemove = () => {
-          this._removeBackdrop()
+        var callbackRemove = function callbackRemove() {
+          _this8._removeBackdrop();
           if (callback) {
-            callback()
+            callback();
           }
-        }
+        };
 
-        if (Util.supportsTransitionEnd() &&
-           $(this._element).hasClass(ClassName.FADE)) {
-          $(this._backdrop)
-            .one(Util.TRANSITION_END, callbackRemove)
-            .emulateTransitionEnd(BACKDROP_TRANSITION_DURATION)
+        if (Util.supportsTransitionEnd() && $(this._element).hasClass(ClassName.FADE)) {
+          $(this._backdrop).one(Util.TRANSITION_END, callbackRemove).emulateTransitionEnd(BACKDROP_TRANSITION_DURATION);
         } else {
-          callbackRemove()
+          callbackRemove();
         }
-
       } else if (callback) {
-        callback()
+        callback();
       }
-    }
-
+    };
 
     // ----------------------------------------------------------------------
     // the following methods are used to handle overflowing modals
@@ -411,23 +418,23 @@ const Modal = (($) => {
         this._element.scrollHeight > document.documentElement.clientHeight
 
       if (!this._isBodyOverflowing && isModalOverflowing) {
-        this._element.style.paddingLeft = `${this._scrollbarWidth}px`
+        this._element.style.paddingLeft = this._scrollbarWidth + 'px';
       }
 
       if (this._isBodyOverflowing && !isModalOverflowing) {
-        this._element.style.paddingRight = `${this._scrollbarWidth}px`
+        this._element.style.paddingRight = this._scrollbarWidth + 'px';
       }
-    }
+    };
 
-    _resetAdjustments() {
-      this._element.style.paddingLeft = ''
-      this._element.style.paddingRight = ''
-    }
+    Modal.prototype._resetAdjustments = function _resetAdjustments() {
+      this._element.style.paddingLeft = '';
+      this._element.style.paddingRight = '';
+    };
 
-    _checkScrollbar() {
-      this._isBodyOverflowing = document.body.clientWidth < window.innerWidth
-      this._scrollbarWidth = this._getScrollbarWidth()
-    }
+    Modal.prototype._checkScrollbar = function _checkScrollbar() {
+      this._isBodyOverflowing = document.body.clientWidth < window.innerWidth;
+      this._scrollbarWidth = this._getScrollbarWidth();
+    };
 
     _setScrollbar() {
       if (this._isBodyOverflowing) {
@@ -491,34 +498,41 @@ const Modal = (($) => {
 
     // static
 
-    static _jQueryInterface(config, relatedTarget) {
+    Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
       return this.each(function () {
-        let data      = $(this).data(DATA_KEY)
-        const _config = $.extend(
-          {},
-          Modal.Default,
-          $(this).data(),
-          typeof config === 'object' && config
-        )
+        var data = $(this).data(DATA_KEY);
+        var _config = $.extend({}, Modal.Default, $(this).data(), (typeof config === 'undefined' ? 'undefined' : _typeof(config)) === 'object' && config);
 
         if (!data) {
-          data = new Modal(this, _config)
-          $(this).data(DATA_KEY, data)
+          data = new Modal(this, _config);
+          $(this).data(DATA_KEY, data);
         }
 
         if (typeof config === 'string') {
           if (data[config] === undefined) {
-            throw new Error(`No method named "${config}"`)
+            throw new Error('No method named "' + config + '"');
           }
-          data[config](relatedTarget)
+          data[config](relatedTarget);
         } else if (_config.show) {
-          data.show(relatedTarget)
+          data.show(relatedTarget);
         }
-      })
-    }
+      });
+    };
 
-  }
+    _createClass(Modal, null, [{
+      key: 'VERSION',
+      get: function get() {
+        return VERSION;
+      }
+    }, {
+      key: 'Default',
+      get: function get() {
+        return Default;
+      }
+    }]);
 
+    return Modal;
+  }();
 
   /**
    * ------------------------------------------------------------------------
@@ -527,36 +541,36 @@ const Modal = (($) => {
    */
 
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
-    let target
-    const selector = Util.getSelectorFromElement(this)
+    var _this9 = this;
+
+    var target = void 0;
+    var selector = Util.getSelectorFromElement(this);
 
     if (selector) {
-      target = $(selector)[0]
+      target = $(selector)[0];
     }
 
-    const config = $(target).data(DATA_KEY) ?
-      'toggle' : $.extend({}, $(target).data(), $(this).data())
+    var config = $(target).data(DATA_KEY) ? 'toggle' : $.extend({}, $(target).data(), $(this).data());
 
     if (this.tagName === 'A' || this.tagName === 'AREA') {
-      event.preventDefault()
+      event.preventDefault();
     }
 
-    const $target = $(target).one(Event.SHOW, (showEvent) => {
+    var $target = $(target).one(Event.SHOW, function (showEvent) {
       if (showEvent.isDefaultPrevented()) {
         // only register focus restorer if modal will actually get shown
-        return
+        return;
       }
 
-      $target.one(Event.HIDDEN, () => {
-        if ($(this).is(':visible')) {
-          this.focus()
+      $target.one(Event.HIDDEN, function () {
+        if ($(_this9).is(':visible')) {
+          _this9.focus();
         }
-      })
-    })
+      });
+    });
 
-    Modal._jQueryInterface.call($(target), config, this)
-  })
-
+    Modal._jQueryInterface.call($(target), config, this);
+  });
 
   /**
    * ------------------------------------------------------------------------
@@ -564,15 +578,14 @@ const Modal = (($) => {
    * ------------------------------------------------------------------------
    */
 
-  $.fn[NAME]             = Modal._jQueryInterface
-  $.fn[NAME].Constructor = Modal
-  $.fn[NAME].noConflict  = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT
-    return Modal._jQueryInterface
-  }
+  $.fn[NAME] = Modal._jQueryInterface;
+  $.fn[NAME].Constructor = Modal;
+  $.fn[NAME].noConflict = function () {
+    $.fn[NAME] = JQUERY_NO_CONFLICT;
+    return Modal._jQueryInterface;
+  };
 
-  return Modal
-
-})(jQuery)
-
-export default Modal
+  return Modal;
+}(jQuery);
+//# sourceMappingURL=modal.js.map
+//# sourceMappingURL=modal.js.map
