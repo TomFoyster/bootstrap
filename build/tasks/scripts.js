@@ -69,11 +69,19 @@ gulp.task('scripts-babel-dist', function() {
     .pipe(gulp.dest(paths.jsOut));
 })
 
+gulp.task('scripts-uglify-dist', function() {
+  return gulp.src(paths.jsOut + pkg.name + '.js')
+    .pipe($.uglify())
+    .pipe($.rename({ suffix: '.min' }))
+    .pipe(gulp.dest(paths.jsOut));
+})
+
 gulp.task('scripts-build', function(callback) {
   return runSequence(
     'scripts-babel-src',
     'scripts-build-dist',
     'scripts-babel-dist',
+    'scripts-uglify-dist',
     callback
   )
 })
