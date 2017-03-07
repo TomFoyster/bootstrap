@@ -41,7 +41,7 @@ var jqueryVersionCheck = '+function ($) {\n' +
 
 
 var bannerInsert = banner + '\n' + jqueryCheck + '\n' + jqueryVersionCheck + '\n+function () {\n\n';
-var footerInsert = '\n\n}();';
+var footerInsert = '\n\n}();\n';
 
 
 gulp.task('scripts-babel-src', function() {
