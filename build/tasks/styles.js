@@ -12,7 +12,7 @@ gulp.task('styles-build', function() {
     .pipe($.plumber())
     .pipe($.sourcemaps.init(autoPrefixConfig.map))
     .pipe(
-      $.sass({outputStyle: 'expanded'}).on("error", $.notify.onError(function (error) {
+      $.sass({outputStyle: 'expanded', precision: 6}).on("error", $.notify.onError(function (error) {
             return "Error: " + error.message;
       })))
     .pipe($.autoprefixer(autoPrefixConfig.autoprefixer))
