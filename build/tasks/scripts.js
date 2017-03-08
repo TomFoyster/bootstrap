@@ -5,6 +5,7 @@ var runSequence = require('run-sequence');
 var $ = require('gulp-load-plugins')();
 var fs = require('fs');
 var paths = require('../paths');
+var autoPrefixConfig = require('../config/postcss');
 
 var pkg = JSON.parse(fs.readFileSync('./package.json'));
 
@@ -45,9 +46,14 @@ gulp.task('scripts-dist', function(callback) {
 
 gulp.task('scripts-src', function() {
   return gulp.src(['js/src/util.js', 'js/src/alert.js', 'js/src/button.js', 'js/src/carousel.js', 'js/src/collapse.js', 'js/src/dropdown.js', 'js/src/modal.js', 'js/src/scrollspy.js', 'js/src/tab.js', 'js/src/tooltip.js', 'js/src/popover.js'])
-    .pipe($.sourcemaps.init())
+    .pipe($.sourcemaps.init(autoPrefixConfig.map))
     .pipe($.babel())
-    .pipe($.sourcemaps.write('.'))
+    .pipe($.sourcemaps.write('.', {
+      includeContent: false,
+      mapSources: function(sourcePath, file) {
+        return '../src/' + sourcePath;
+      }
+    }))
     .pipe(gulp.dest('js/dist'));
 })
 
