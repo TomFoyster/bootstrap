@@ -17,7 +17,12 @@ gulp.task('styles-build', function() {
       })))
     .pipe($.autoprefixer(autoPrefixConfig.autoprefixer))
     .pipe($.postcss([postcssFlexbugsFixes()]))
-    .pipe($.sourcemaps.write('.', {includeContent: false, sourceRoot: '/src'}))
+    .pipe($.sourcemaps.write('.', {
+      includeContent: false,
+      mapSources: function(sourcePath, file) {
+        return '../../scss/' + sourcePath;
+      }
+    }))
     .pipe(gulp.dest(paths.cssOut))
 })
 
