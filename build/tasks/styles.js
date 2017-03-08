@@ -3,9 +3,9 @@ var gulp = require('gulp');
 // No need to include them all here.
 var $ = require('gulp-load-plugins')();
 var postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
+
 var paths = require('../paths');
 var autoPrefixConfig = require('../config/postcss');
-
 
 gulp.task('styles-build', function() {
   return gulp.src(paths.scssSource)
@@ -17,10 +17,11 @@ gulp.task('styles-build', function() {
       })))
     .pipe($.autoprefixer(autoPrefixConfig.autoprefixer))
     .pipe($.postcss([postcssFlexbugsFixes()]))
-    .pipe($.sourcemaps.write('.', {
-      includeContent: false,
+    .pipe($.sourcemaps.write('.', {includeContent: false,
       mapSources: function(sourcePath, file) {
-        return '../../scss/' + sourcePath;
+        var pathArray = file.path.split('\\').join('/').split('/'); // Handle Windows '\'
+        return (pathArray[pathArray.length -1] == sourcePath) ? sourcePath : '../../scss/' + sourcePath;
+        // source paths are prefixed with '../src/'
       }
     }))
     .pipe(gulp.dest(paths.cssOut))
