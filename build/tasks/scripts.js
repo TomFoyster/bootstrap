@@ -7,21 +7,6 @@ var fs = require('fs');
 var paths = require('../paths');
 
 var pkg = JSON.parse(fs.readFileSync('./package.json'));
-var babelConfig = {
-  "presets": [
-    [
-      "es2015",
-      {
-        "modules": false,
-        "loose": true
-      }
-    ]
-  ],
-  "plugins": [
-    "transform-es2015-modules-strip"
-  ]
-};
-
 
 // Code to insertBefore
 var banner = '/*!\n' +
@@ -43,8 +28,22 @@ var jqueryVersionCheck = '+function ($) {\n' +
 var bannerInsert = banner + '\n' + jqueryCheck + '\n' + jqueryVersionCheck + '\n+function () {\n\n';
 var footerInsert = '\n\n}();\n';
 
+gulp.task('scripts-build', function(callback) {
+  return runSequence(
+    ['scripts-src', 'scripts-dist'],
+    callback
+  )
+})
 
-gulp.task('scripts-babel-src', function() {
+gulp.task('scripts-dist', function(callback) {
+  return runSequence(
+    'scripts-dist-build',
+    'scripts-dist-babel',
+    callback
+  )
+})
+
+gulp.task('scripts-src', function() {
   return gulp.src(['js/src/util.js', 'js/src/alert.js', 'js/src/button.js', 'js/src/carousel.js', 'js/src/collapse.js', 'js/src/dropdown.js', 'js/src/modal.js', 'js/src/scrollspy.js', 'js/src/tab.js', 'js/src/tooltip.js', 'js/src/popover.js'])
     .pipe($.sourcemaps.init())
     .pipe($.babel())
@@ -52,7 +51,7 @@ gulp.task('scripts-babel-src', function() {
     .pipe(gulp.dest('js/dist'));
 })
 
-gulp.task('scripts-build-dist', function() {
+gulp.task('scripts-dist-build', function() {
   return gulp.src(['js/src/util.js', 'js/src/alert.js', 'js/src/button.js', 'js/src/carousel.js', 'js/src/collapse.js', 'js/src/dropdown.js', 'js/src/modal.js', 'js/src/scrollspy.js', 'js/src/tab.js', 'js/src/tooltip.js', 'js/src/popover.js'])
     .pipe($.concatUtil(pkg.name + '.js', {
       process: function (src) {
@@ -62,26 +61,12 @@ gulp.task('scripts-build-dist', function() {
     .pipe(gulp.dest(paths.jsOut));
 })
 
-gulp.task('scripts-babel-dist', function() {
+gulp.task('scripts-dist-babel', function() {
   return gulp.src(paths.jsOut + pkg.name + '.js')
     .pipe($.babel({extends: '../../js/.babelrc'}))
     .pipe($.insert.wrap(bannerInsert, footerInsert))
-    .pipe(gulp.dest(paths.jsOut));
-})
-
-gulp.task('scripts-uglify-dist', function() {
-  return gulp.src(paths.jsOut + pkg.name + '.js')
+    .pipe(gulp.dest(paths.jsOut))
     .pipe($.uglify({output: {comments: /^!/i}}))
     .pipe($.rename({ suffix: '.min' }))
     .pipe(gulp.dest(paths.jsOut));
-})
-
-gulp.task('scripts-build', function(callback) {
-  return runSequence(
-    'scripts-babel-src',
-    'scripts-build-dist',
-    'scripts-babel-dist',
-    'scripts-uglify-dist',
-    callback
-  )
 })
