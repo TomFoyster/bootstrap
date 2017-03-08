@@ -17,7 +17,7 @@ gulp.task('styles-build', function() {
       })))
     .pipe($.autoprefixer(autoPrefixConfig.autoprefixer))
     .pipe($.postcss([postcssFlexbugsFixes()]))
-    .pipe($.sourcemaps.write('.', {includeContent: false,
+    .pipe($.sourcemaps.write('.', {includeContent: true,
       mapSources: function(sourcePath, file) {
         var pathArray = file.path.split('\\').join('/').split('/'); // Handle Windows '\'
         return (pathArray[pathArray.length -1] == sourcePath) ? sourcePath : '../../scss/' + sourcePath;
