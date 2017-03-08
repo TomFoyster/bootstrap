@@ -19,9 +19,9 @@ gulp.task('styles-build', function() {
     .pipe($.postcss([postcssFlexbugsFixes()]))
     .pipe($.sourcemaps.write('.', {includeContent: true,
       mapSources: function(sourcePath, file) {
+        // Create correct source paths in map
         var pathArray = file.path.split('\\').join('/').split('/'); // Handle Windows '\'
         return (pathArray[pathArray.length -1] == sourcePath) ? sourcePath : '../../scss/' + sourcePath;
-        // source paths are prefixed with '../src/'
       }
     }))
     .pipe(gulp.dest(paths.cssOut))
