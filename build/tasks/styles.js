@@ -29,7 +29,9 @@ gulp.task('styles-build', function() {
 
 gulp.task('styles-minify', function() {
   return gulp.src(paths.cssOut + '**/*.css')
+    .pipe($.sourcemaps.init())
     .pipe($.minifyCss({sourceMap: false }))
     .pipe($.rename({ suffix: '.min' }))
+    .pipe($.sourcemaps.write('.', {includeContent: false}))
     .pipe(gulp.dest(paths.cssOut));
 })

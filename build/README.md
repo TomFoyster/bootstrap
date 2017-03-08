@@ -4,10 +4,12 @@
 
 This Gulp implementation is an ongoing conversion of Bootstrap's Grunt build process. The Roadmap below is not an exhaustive list of features that need to be implemented - more will be added as I dismantle the Grunt tasks.
 
+_The target is for the only modified file in this branch to be `package.json`. All compiled files should be like-for-like._
+
 ## Roadmap
 
 - [x] Sass Compilation
-   - [x] Sourcemaps
+   - [ ] Like-for-like Sourcemaps
    - [x] Autoprefixer
    - [x] Integrate the postcss-flexbugs-fixes module
    - [x] Like-for-like autoprefixing (within reason)
@@ -19,6 +21,10 @@ This Gulp implementation is an ongoing conversion of Bootstrap's Grunt build pro
    - [ ] QUnit Integration
    - [ ] Remove dependance on Bower, bring jQuery and Tether into NPM
 - [ ] Jekyll Integration for Docs
+
+## Current issues
+
+- Because the CSS is minified in a separate process to the one used to compile it - the min.css.map files are different.
 
 ## Installation & Setup
 
