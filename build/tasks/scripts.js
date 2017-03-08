@@ -49,7 +49,6 @@ gulp.task('scripts-src', function() {
     .pipe($.sourcemaps.init(autoPrefixConfig.map))
     .pipe($.babel())
     .pipe($.sourcemaps.write('.', {
-      includeContent: false,
       mapSources: function(sourcePath, file) {
         return '../src/' + sourcePath;
       }
