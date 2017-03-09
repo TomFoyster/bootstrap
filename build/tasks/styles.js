@@ -7,6 +7,7 @@ var postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 var paths = require('../paths');
 var autoPrefixConfig = require('../config/postcss');
 
+//cleancss --level 1 --source-map --output dist/css/bootstrap.min.css dist/css/bootstrap.css && cleancss --level 1 --source-map --output dist/css/bootstrap-grid.min.css dist/css/bootstrap-grid.css && cleancss --level 1 --source-map --output dist/css/bootstrap-reboot.min.css dist/css/bootstrap-reboot.css
 gulp.task('styles-build', function() {
   return gulp.src(paths.scssSource)
     .pipe($.plumber())
@@ -17,6 +18,7 @@ gulp.task('styles-build', function() {
       })))
     .pipe($.autoprefixer(autoPrefixConfig.autoprefixer))
     .pipe($.postcss([postcssFlexbugsFixes()]))
+    .pipe($.cleanCss({level: 1}))
     .pipe($.sourcemaps.write('.', {includeContent: true,
       mapSources: function(sourcePath, file) {
         // Create correct source paths in map
@@ -31,6 +33,7 @@ gulp.task('styles-minify', function() {
   return gulp.src(paths.cssOut + '**/*.css')
     .pipe($.sourcemaps.init())
     .pipe($.minifyCss({sourceMap: false }))
+    .pipe($.cleanCss({level: 1}))
     .pipe($.rename({ suffix: '.min' }))
     .pipe($.sourcemaps.write('.', {includeContent: false}))
     .pipe(gulp.dest(paths.cssOut));
