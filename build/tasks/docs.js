@@ -30,7 +30,7 @@ gulp.task('docs-scripts', ['clean-docs-scripts'], function(callback) {
 
 gulp.task('docs-dist', function() {
   return gulp.src('dist/**/*')
-    .pipe(gulp.dest('docs/dist'));
+    .pipe(gulp.dest('docs/dist/'));
 });
 
 // Style Tasks
