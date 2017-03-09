@@ -10,7 +10,7 @@ var autoPrefixConfig = require('../config/postcss');
 
 
 // Main file tasks
-gulp.task('docs-styles', ['clean-docs-styles'], function(callback) {
+gulp.task('docs-styles', function(callback) {
   return runSequence(
     'docs-scss-lint',
     'docs-sass',
@@ -21,7 +21,7 @@ gulp.task('docs-styles', ['clean-docs-styles'], function(callback) {
   );
 });
 
-gulp.task('docs-scripts', ['clean-docs-scripts'], function(callback) {
+gulp.task('docs-scripts', function(callback) {
   return runSequence(
     'docs-uglify-js',
     callback

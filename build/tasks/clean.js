@@ -18,13 +18,3 @@ gulp.task('clean-styles', function() {
   return gulp.src([paths.cssOut])
     .pipe(vinylPaths(del));
 });
-
-gulp.task('clean-docs-styles', function() {
-  return gulp.src(['docs/assets/css/*', '!docs/assets/css', 'docs/assets/js/docs.min.js'])
-    .pipe(vinylPaths(del));
-});
-
-gulp.task('clean-docs-scripts', function() {
-  return gulp.src(['docs/assets/js/docs.min.js', 'docs/dist/**/*', '!docs/dist/'])
-    .pipe(vinylPaths(del));
-});
