@@ -4,6 +4,7 @@ var runSequence = require('run-sequence');
 gulp.task('run', function(callback) {
   return runSequence(
     ['run-styles', 'run-scripts'],
+    'run-docs',
     callback
   );
 });
