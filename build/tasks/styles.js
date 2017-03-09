@@ -18,7 +18,6 @@ gulp.task('styles-build', function() {
       })))
     .pipe($.autoprefixer(autoPrefixConfig.autoprefixer))
     .pipe($.postcss([postcssFlexbugsFixes()]))
-    .pipe($.cleanCss({level: 1}))
     .pipe($.sourcemaps.write('.', {includeContent: true,
       mapSources: function(sourcePath, file) {
         // Create correct source paths in map
