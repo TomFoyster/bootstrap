@@ -55,7 +55,7 @@ gulp <task>
 
 `gulp run-scripts` - Runs the `test-scripts` and `build-scripts` tasks.
 
-`gulp run-docs` - Runs the...
+`gulp run-docs` - Runs all tasks associated with compiling the Documentation source.
 
 ###Test
 
@@ -63,7 +63,7 @@ gulp <task>
 
 `gulp test-styles` - Runs the **SCSSLint** process, configured with the `scss/.scss-lint.yml` file.
 
-`gulp test-scripts` - Currently this task does not run any processes
+`gulp test-scripts` - Runs the `test-scripts-qunit` task to run the required QUnit tests.
 
 ###Build
 
@@ -72,3 +72,17 @@ gulp <task>
 `gulp build-styles` - Runs the `clean-styles` task, and then compiles the SCSS with the `styles-build` and `styles-minify` tasks.
 
 `gulp build-scripts` - Runs the `clean-scripts` task, and then compiles the JavaScript files  with the `scripts-build` task.
+
+## Serving the Documentation
+
+As with Grunt, Jekyll can be used to serve the documentation locally.
+
+**Windows Users! You may need to follow this guide - http://jekyll-windows.juthilo.com/ - to configure Jekyll on your machine**
+
+To serve the documentation, run-sequence
+
+`jekyll serve`
+
+Then visit;
+
+http://localhost:9001/
