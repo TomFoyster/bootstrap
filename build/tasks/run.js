@@ -23,3 +23,10 @@ gulp.task('run-scripts', function(callback) {
     callback
   );
 });
+
+gulp.task('run-docs', function(callback) {
+  return runSequence(
+    ['docs-styles', 'docs-scripts', 'docs-dist'],
+    callback
+  );
+});
