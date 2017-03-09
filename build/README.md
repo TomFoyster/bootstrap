@@ -25,7 +25,7 @@ _The target is for the only modified file in this branch to be `package.json`. A
    - [x] PostCss Docs
    - [x] Uglify Docs
    - [x] Clean & Copy Docs
-- [ ] Jekyll Integration for Docs
+- [x] Jekyll Integration for Docs
 
 ## Current issues
 
