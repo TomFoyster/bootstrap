@@ -4,6 +4,7 @@ var outputRoot = 'dist/';
 module.exports = {
   root: appRoot,
   scssSource: 'scss/**/*.scss',
+  docsScssSource: 'docs/assets/scss/*.scss',
   jsSource: 'js/',
   cssOut: outputRoot + 'css/',
   jsOut: outputRoot + 'js/',
