@@ -22,6 +22,7 @@
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.3.0",
+    "gulp-qunit": "^1.5.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-scss-lint": "^0.4.0",
