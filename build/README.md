@@ -18,12 +18,14 @@ _The target is for the only modified file in this branch to be `package.json`. A
 - [ ] Javascript Compilation
    - [x] Babel Compilation
    - [ ] ESLint Integration
-   - [ ] QUnit Integration
+   - [x] QUnit Integration
    - [ ] Remove dependance on Bower, bring jQuery and Tether into NPM
 - [ ] Jekyll Integration for Docs
 
 ## Current issues
 
+- A number of the `dist/css/*.css` files show as changed due to differences with new lines around the Source Map Comment.
+- A number of the `dist/css/*.css.map` files show as changed due to Gulp including the comments in the Source Content.
 - Because the CSS is minified in a separate process to the one used to compile it - the min.css.map files are different.
 
 ## Installation & Setup
@@ -42,7 +44,7 @@ gulp <task>
 
 ###Run
 
-`gulp run` - Runs the `test` and `build` tasks.
+`gulp run` - Runs the `run-styles` and `run-scripts` tasks.
 
 `gulp run-styles` - Runs the `test-styles` and `build-styles` tasks.
 
