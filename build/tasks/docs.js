@@ -15,8 +15,7 @@ gulp.task('docs-styles', function(callback) {
     'docs-scss-lint',
     'docs-sass',
     'docs-clean-css',
-    'docs-postcss',
-    'docs-postcss-examples',
+    ['docs-postcss', 'docs-postcss-examples'],
     callback
   );
 });
