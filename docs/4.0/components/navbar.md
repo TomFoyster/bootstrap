@@ -18,6 +18,49 @@ Here's what you need to know before getting started with the navbar:
 
 Read on for an example and list of supported sub-components.
 
+## The Next Navbar
+
+When using the Navbar in an Application for Next - it must follow the below rules;
+
+- The logo must be on the left hand side of the Navbar
+- If the Application has a collapsable menu - the toggle link must be to the left of the Next Logo
+- There should be no more than 4 links used in the Navbar
+- The Navbar must not contain the Menu Toggle Link _and_ Menu link items.
+
+{% example html %}
+<!-- Just an image -->
+<nav class="navbar navbar-inverse bg-inverse">
+  <a class="navbar-brand" href="#">
+    <img src="{{ site.baseurl }}/assets/brand/next-logo.png" width="100" height="28" alt="">
+  </a>
+</nav>
+{% endexample %}
+
+{% example html %}
+<nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">
+    <img src="{{ site.baseurl }}/assets/brand/next-logo.png" width="100" height="28" alt="">
+  </a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endexample %}
+
 ## Supported content
 
 Navbars come with built-in support for a handful of sub-components. Choose from the following as needed:
