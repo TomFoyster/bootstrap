@@ -39,6 +39,34 @@
   "scripts": {
     "test": "gulp test"
   },
+  "engines": {
+    "node": ">=4"
+  },
+  "files": [
+    "build",
+    "dist",
+    "js/**/*.js",
+    "scss/**/*.scss",
+    "gulpfile.js",
+    "LICENSE"
+  ],
+  "jspm": {
+    "main": "js/bootstrap",
+    "directories": {
+      "lib": "dist"
+    },
+    "shim": {
+      "js/bootstrap": {
+        "deps": [
+          "jquery"
+        ],
+        "exports": "$"
+      }
+    },
+    "dependencies": {
+      "jquery": "3"
+    }
+  },
   "author": "The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)",
   "homepage": "https://getbootstrap.com",
   "license": "ISC"
