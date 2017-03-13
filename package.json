@@ -1,13 +1,13 @@
 {
   "name": "bootstrap",
-  "version": "4.0.0-alpha6-ntt-0.0.2",
   "description": "A Gulp powered implementation of Bootstrap 4 for Next Retail Plc",
-  "main": "gulpfile.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "version": "4.0.0-alpha6-ntt-0.0.3",
+  "homepage": "https://getbootstrap.com",
+  "author": "The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)",
+  "main": "dist/js/bootstrap",
+  "license": "ISC",
   "dependencies": {
-    "jquery": "^3.1.1",
+    "jquery": ">=1.9.1",
     "tether": "^1.4.0"
   },
   "devDependencies": {
@@ -69,8 +69,5 @@
     "dependencies": {
       "jquery": "3"
     }
-  },
-  "author": "The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)",
-  "homepage": "https://getbootstrap.com",
-  "license": "ISC"
+  }
 }
