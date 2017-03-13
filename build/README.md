@@ -26,7 +26,9 @@ _The target is for the only modified file in this branch to be `package.json`. A
    - [x] Uglify Docs
    - [x] Clean & Copy Docs
 - [x] Jekyll Integration for Docs
-
+- [ ] Grunt Scripts
+   - [ ] change-version.js
+   
 ## Current issues
 
 - A number of the `dist/css/*.css` files show as changed due to differences with new lines around the Source Map Comment.
