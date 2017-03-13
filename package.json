@@ -1,6 +1,6 @@
 {
   "name": "bootstrap",
-  "version": "4.0.0-alpha.6",
+  "version": "4.0.0-alpha6-ntt-0.0.1",
   "description": "A Gulp powered implementation of Bootstrap 4 for Next Retail Plc",
   "main": "gulpfile.js",
   "directories": {
