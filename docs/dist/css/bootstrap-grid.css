@@ -18,6 +18,35 @@ html {
 /********
 Next Theme
 *********/
+.customTable--selectable tbody tr {
+  cursor: pointer .customTable--selectable tbody tr;
+}
+
+.customTable--selectable tbody tr :hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.customTable--selectable tbody .diffTable {
+  width: 100% td;
+  width-padding: 6px;
+}
+
+.diffTable-- .customTable--selectable tbodyfrom {
+  background-color: #ffecec;
+}
+
+.customTable--selectable tbodyfrom span {
+  background-color: #f8cbcb;
+}
+
+.customTable--selectable tbodyto {
+  background-color: #eaffea;
+}
+
+.customTable--selectable tbodyto span {
+  background-color: #a6f3a6;
+}
+
 .container {
   position: relative;
   margin-left: auto;
