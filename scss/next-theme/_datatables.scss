@@ -1,30 +1,30 @@
 .customTable--selectable tbody {
   tr {
-    cursor: pointer
+    cursor: pointer;
 
     &:hover {
       background-color: rgba(0, 0, 0, .1)
     }
   }
 
-.diffTable {
-    width: 100%
-
-    td {
-        padding: 6px;
-    }
 }
-.diffTable--
-  &from {
-    background-color: #ffecec
+
+.diffTable {
+  width: 100%;
+
+  td {
+    padding: 6px;
   }
-  &from span {
-    background-color: #f8cbcb
+  &--from {
+    background-color: #ffecec;
   }
-  &to {
-    background-color: #eaffea
+  &--from span {
+    background-color: #f8cbcb;
   }
-  &to span {
-    background-color: #a6f3a6
+  &--to {
+    background-color: #eaffea;
+  }
+  &--to span {
+    background-color: #a6f3a6;
   }
 }
