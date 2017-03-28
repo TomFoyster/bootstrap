@@ -9,6 +9,8 @@ Next Theme
 // Start with assigning color names to specific hex values.
 $black:  #000 !default;
 
-
 // Reassign color vars to semantic color scheme
 $brand-inverse:             $black;
+
+// Modal widths
+$modal-lg:                  90%;
