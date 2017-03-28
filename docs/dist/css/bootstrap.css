@@ -8,31 +8,34 @@
 Next Theme
 *********/
 .customTable--selectable tbody tr {
-  cursor: pointer .customTable--selectable tbody tr;
+  cursor: pointer;
 }
 
-.customTable--selectable tbody tr :hover {
+.customTable--selectable tbody tr:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.customTable--selectable tbody .diffTable {
-  width: 100% td;
-  width-padding: 6px;
+.diffTable {
+  width: 100%;
 }
 
-.diffTable-- .customTable--selectable tbodyfrom {
+.diffTable td {
+  padding: 6px;
+}
+
+.diffTable--from {
   background-color: #ffecec;
 }
 
-.customTable--selectable tbodyfrom span {
+.diffTable--from span {
   background-color: #f8cbcb;
 }
 
-.customTable--selectable tbodyto {
+.diffTable--to {
   background-color: #eaffea;
 }
 
-.customTable--selectable tbodyto span {
+.diffTable--to span {
   background-color: #a6f3a6;
 }
 
@@ -5444,7 +5447,7 @@ button.close {
 
 @media (min-width: 992px) {
   .modal-lg {
-    max-width: 800px;
+    max-width: 90%;
   }
 }
 
