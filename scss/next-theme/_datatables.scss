@@ -6,7 +6,20 @@
       background-color: rgba(0, 0, 0, .1)
     }
   }
+}
 
+.datatable-pagination {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
+  &--input {
+    width: 34px;
+    border: $input-btn-border-width solid $input-border-color;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+  }
 }
 
 .diffTable {
