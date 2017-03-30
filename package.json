@@ -8,7 +8,7 @@
   "license": "ISC",
   "dependencies": {
     "jquery": ">=1.9.1",
-    "tether": "github:HubSpot/tether@^1.1.1"
+   "tether": "^1.4.0"
   },
   "devDependencies": {
     "babel-plugin-transform-es2015-modules-strip": "^0.1.0",
@@ -67,7 +67,8 @@
       }
     },
     "dependencies": {
-      "jquery": "3"
+      "jquery": "3",
+      "tether": "github:HubSpot/tether@^1.1.1"
     }
   }
 }
