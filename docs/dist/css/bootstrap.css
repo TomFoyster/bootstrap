@@ -7,38 +7,6 @@
 /********
 Next Theme
 *********/
-.customTable--selectable tbody tr {
-  cursor: pointer;
-}
-
-.customTable--selectable tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.diffTable {
-  width: 100%;
-}
-
-.diffTable td {
-  padding: 6px;
-}
-
-.diffTable--from {
-  background-color: #ffecec;
-}
-
-.diffTable--from span {
-  background-color: #f8cbcb;
-}
-
-.diffTable--to {
-  background-color: #eaffea;
-}
-
-.diffTable--to span {
-  background-color: #a6f3a6;
-}
-
 @media print {
   *,
   *::before,
@@ -9202,6 +9170,62 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   .hidden-print {
     display: none !important;
   }
+}
+
+.customTable--selectable tbody tr {
+  cursor: pointer;
+}
+
+.customTable--selectable tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.datatable-pagination {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.datatable-pagination--input {
+  width: 34px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.diffTable {
+  width: 100%;
+}
+
+.diffTable td {
+  padding: 6px;
+}
+
+.diffTable--from {
+  background-color: #ffecec;
+}
+
+.diffTable--from span {
+  background-color: #f8cbcb;
+}
+
+.diffTable--to {
+  background-color: #eaffea;
+}
+
+.diffTable--to span {
+  background-color: #a6f3a6;
 }
 
 /*# sourceMappingURL=bootstrap.css.map */

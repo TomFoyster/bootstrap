@@ -18,38 +18,6 @@ html {
 /********
 Next Theme
 *********/
-.customTable--selectable tbody tr {
-  cursor: pointer;
-}
-
-.customTable--selectable tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.diffTable {
-  width: 100%;
-}
-
-.diffTable td {
-  padding: 6px;
-}
-
-.diffTable--from {
-  background-color: #ffecec;
-}
-
-.diffTable--from span {
-  background-color: #f8cbcb;
-}
-
-.diffTable--to {
-  background-color: #eaffea;
-}
-
-.diffTable--to span {
-  background-color: #a6f3a6;
-}
-
 .container {
   position: relative;
   margin-left: auto;
