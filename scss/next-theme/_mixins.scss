@@ -1,0 +1,6 @@
+/* Mixins */
+
+@mixin flexParent() {
+  display: flex;
+  align-items: center;
+}
