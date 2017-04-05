@@ -108,7 +108,8 @@ body {
   }
 
   .alert__icon {
-    align-items: stretch;
+    display: flex;
+    align-items: center;
     padding: 10px 15px;
     font-size: 27px;
   }
