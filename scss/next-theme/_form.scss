@@ -1,0 +1,89 @@
+// Next Form Styles
+
+.form-control {
+    border-radius: none;
+}
+
+.button {
+  display: inline-block;
+
+  &__input {
+    position: relative;
+    min-width: 5.14em;
+    margin: 0 0.29em;
+    background: $next-white;
+    text-transform: uppercase;
+    outline-width: 0;
+    border-radius: 3px;
+    user-select: none;
+    cursor: pointer;
+    z-index: 0;
+    padding: 0.7em 0.57em;
+    font-family: 'Roboto', 'Noto', sans-serif;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    transition: opacity .28s ease-out, box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+
+    &:active {
+      box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
+      opacity: 0.7;
+    }
+  }
+
+  &:last-child {
+    .button__input { // TODO:- Can this be dried?
+      background: $next-primary;
+      color: #FFF;
+      font-weight: bold;
+    }
+  }
+}
+
+.checkbox {
+  &--nolabel {
+    height: 20px;
+  }
+}
+
+/* Tooltip text */
+.tooltiptext {
+    visibility: hidden;
+    padding: 4px 4px;
+    margin: 1px;
+    border-radius: 3px;
+    z-index: 1;
+    position: absolute;
+    bottom: -17px;
+    left: 13px;
+    width: auto;
+    white-space: nowrap;
+    font-size: 15px;
+    background-color: #ffad33;
+    color: #fff;
+}
+
+.form-element {
+  &:hover, &:focus {
+    .tooltiptext {
+      visibility: visible;
+    }
+  }
+}
+
+.formgroup--intable {
+  margin-bottom: 0;
+}
+
+.fieldvalue {
+  display: block;
+  padding-bottom: 10px;
+}
+
+.inputlabel {
+  margin-bottom: 0; // BS Reset.
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #737373;
+  display: block;
+}
