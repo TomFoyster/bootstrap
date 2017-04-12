@@ -9317,6 +9317,10 @@ body {
   background: #ffc107;
 }
 
+.papermaterial--alert.papermaterial--danger .alert__icon {
+  background: #F44336;
+}
+
 .papermaterial--alert .fa {
   color: #FFF;
   height: 30px;
