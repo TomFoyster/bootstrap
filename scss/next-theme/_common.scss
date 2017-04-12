@@ -126,6 +126,10 @@ body {
     background: $next-warning;
   }
 
+  &.papermaterial--danger .alert__icon {
+    background: $next-danger;
+  }
+
   .fa {
     color: #FFF;
     height: 30px;
