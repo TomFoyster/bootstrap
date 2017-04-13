@@ -1,0 +1,9 @@
+// Extra Utilities to use in the Next Theme
+
+.text-wrap-break {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
