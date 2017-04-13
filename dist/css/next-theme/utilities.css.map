@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../scss/next-theme/utilities.css"],"names":[],"mappings":"AAAA;EACE,sBAAsB;EACtB,2BAA2B;EAC3B,uBAAuB;EACvB,yBAAyB;EACzB,sBAAsB;CACvB","file":"utilities.css","sourcesContent":[".text-wrap-break {\n  white-space: pre-wrap;\n  white-space: -moz-pre-wrap;\n  white-space: -pre-wrap;\n  white-space: -o-pre-wrap;\n  word-wrap: break-word;\n}\n"]}
