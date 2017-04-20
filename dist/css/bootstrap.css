@@ -9275,6 +9275,14 @@ body {
   color: #555;
 }
 
+.papermaterial__title--orange {
+  border-bottom-color: #FF6D00;
+}
+
+.papermaterial__title--blue {
+  border-bottom-color: #0091EA;
+}
+
 .jumbotron {
   background-color: none;
 }
@@ -9368,13 +9376,31 @@ body {
 }
 
 .button:last-child .button__input {
-  background: #00bfa5;
   color: #FFF;
   font-weight: bold;
+  background: #00bfa5;
+}
+
+.button:last-child .button__input.button__input--blue {
+  background: #0091EA;
+}
+
+.button:last-child .button__input.button__input--orange {
+  background: #FF6D00;
+}
+
+.button:last-child .button__input.button__input--purple {
+  background: #6200EA;
 }
 
 .checkbox--nolabel {
-  height: 20px;
+  margin: 0;
+  min-height: 1.2rem;
+  padding-left: 1.2rem;
+}
+
+.custom-checkbox .custom-control-input:checked:disabled ~ .custom-control-indicator {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%230275d8' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
 }
 
 /* Tooltip text */
@@ -9416,12 +9442,54 @@ body {
   display: block;
 }
 
+.customTable .form-control {
+  padding: .2rem .5rem;
+}
+
+.customTable thead {
+  border-bottom: 2px solid #eceeef;
+}
+
+.customTable thead th {
+  border: none;
+}
+
 .customTable--selectable tbody tr {
   cursor: pointer;
 }
 
 .customTable--selectable tbody tr:hover {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.customTable thead tr th.spanHeader {
+  position: relative;
+}
+
+.customTable thead tr th.spanHeader:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  width: calc(100% - 20px);
+  z-index: 0;
+  border: 1px dashed #CECECE;
+}
+
+.customTable thead tr th.spanHeader span {
+  background: #FFF;
+  padding: 0 5px;
+  z-index: 1;
+  position: relative;
+}
+
+.customTable.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.customTable td.divide--left {
+  border-left: 2px solid #eceeef;
 }
 
 .datatable-pagination {
