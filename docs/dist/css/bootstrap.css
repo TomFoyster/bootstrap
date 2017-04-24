@@ -9335,6 +9335,30 @@ body {
   width: 30px;
 }
 
+.page__content--orange .papermaterial__title {
+  border-bottom-color: #FF6D00;
+}
+
+.page__content--orange .button:last-child .button__input {
+  background: #FF6D00;
+}
+
+.page__content--blue .papermaterial__title {
+  border-bottom-color: #0091EA;
+}
+
+.page__content--blue .button:last-child .button__input {
+  background: #0091EA;
+}
+
+.page__content--purple .papermaterial__title {
+  border-bottom-color: #6200EA;
+}
+
+.page__content--purple .button:last-child .button__input {
+  background: #6200EA;
+}
+
 .form-control {
   border-radius: none;
 }
