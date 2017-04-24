@@ -144,3 +144,33 @@ body {
   }
 
 }
+
+.page__content--orange {
+  .papermaterial__title {
+    border-bottom-color: $next-orange;
+  }
+
+  .button:last-child .button__input {
+    background: $next-orange;
+  }
+}
+
+.page__content--blue {
+  .papermaterial__title {
+    border-bottom-color: $next-blue;
+  }
+
+  .button:last-child .button__input {
+    background: $next-blue;
+  }
+}
+
+.page__content--purple {
+  .papermaterial__title {
+    border-bottom-color: $next-purple;
+  }
+
+  .button:last-child .button__input {
+    background: $next-purple;
+  }
+}
