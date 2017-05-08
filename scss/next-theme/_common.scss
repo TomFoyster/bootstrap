@@ -174,3 +174,14 @@ body {
     background: $next-purple;
   }
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  &__env {
+    padding: 4px 10px 4px 4px;
+    margin: 0;
+  }
+}
