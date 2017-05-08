@@ -9359,6 +9359,17 @@ body {
   background: #6200EA;
 }
 
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.footer__env {
+  padding: 4px 10px 4px 4px;
+  margin: 0;
+}
+
 .form-control {
   border-radius: none;
 }
