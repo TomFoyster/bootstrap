@@ -9242,7 +9242,7 @@ body {
 .page__content {
   padding: 20px;
   overflow-y: auto;
-  height: calc(100% - 64px);
+  height: calc(100% - 96px);
 }
 
 .page__content--menu {
