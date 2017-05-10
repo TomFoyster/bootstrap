@@ -53,16 +53,22 @@
 }
 
 .datatable-pagination {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
+  &__input {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
 
-  &--input {
-    width: 34px;
-    border: $input-btn-border-width solid $input-border-color;
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
+    &--input {
+      width: 45px;
+      border: $input-btn-border-width solid $input-border-color;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
+    }
+  }
+
+  &__pager {
+    margin-bottom: 0;
   }
 }
 
