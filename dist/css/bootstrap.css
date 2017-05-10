@@ -9596,7 +9596,7 @@ body {
   border-left: 2px solid #eceeef;
 }
 
-.datatable-pagination {
+.datatable-pagination__input {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9612,12 +9612,16 @@ body {
           align-items: center;
 }
 
-.datatable-pagination--input {
-  width: 34px;
+.datatable-pagination__input--input {
+  width: 45px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   display: inline-block;
   vertical-align: middle;
   text-align: center;
+}
+
+.datatable-pagination__pager {
+  margin-bottom: 0;
 }
 
 .diffTable {
