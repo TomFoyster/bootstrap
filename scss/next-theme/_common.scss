@@ -77,6 +77,7 @@ body {
 
 .papermaterial {
   background: $next-white;
+  position: relative;
   padding: 15px 15px 0 15px;
   float: left;
   margin: 0 0 15px 0;
@@ -96,6 +97,41 @@ body {
     }
     &--blue {
       border-bottom-color: $next-blue;
+    }
+  }
+
+  &--fab {
+    padding-bottom: 25px;
+  }
+
+  &__fab {
+    position: absolute;
+    left: calc(50% - 28px);
+    bottom: -28px;
+    background: $next-primary;
+    width: 56px;
+    height: 56px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    vertical-align: middle;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    transition: background .28s ease-out, box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+
+    i {
+      width: inherit;
+      display: inline-block;
+      text-align: center;
+      color: #fff;
+      font-size: 2rem;
+      line-height: 56px;
+      font-style: normal;
+    }
+
+    &:active {
+      box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
+      background: $next-primary-highlight;
     }
   }
 }
@@ -153,6 +189,14 @@ body {
   .button:last-child .button__input {
     background: $next-orange;
   }
+
+  .papermaterial__fab {
+    background: $next-orange;
+
+    &:active {
+      background: $next-orange-highlight;
+    }
+  }
 }
 
 .page__content--blue {
@@ -163,6 +207,14 @@ body {
   .button:last-child .button__input {
     background: $next-blue;
   }
+
+  .papermaterial__fab {
+    background: $next-blue;
+
+    &:active {
+      background: $next-blue-highlight;
+    }
+  }
 }
 
 .page__content--purple {
@@ -172,6 +224,14 @@ body {
 
   .button:last-child .button__input {
     background: $next-purple;
+  }
+
+  .papermaterial__fab {
+    background: $next-purple;
+
+    &:active {
+      background: #FF9100;
+    }
   }
 }
 
