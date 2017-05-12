@@ -9276,6 +9276,10 @@ body {
   color: #555;
 }
 
+.papermaterial__title__toggle {
+  float: right;
+}
+
 .papermaterial__title--orange {
   border-bottom-color: #FF6D00;
 }
