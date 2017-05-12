@@ -1,6 +1,5 @@
 .customTable {
   thead {
-    border-bottom: 2px solid #eceeef;
 
     th {
         border: none;
@@ -10,10 +9,6 @@
   &--selectable tbody {
     tr {
       cursor: pointer;
-
-      &:hover {
-        background-color: rgba(0, 0, 0, .1)
-      }
     }
   }
 
@@ -44,10 +39,19 @@
   }
 
   td {
+    vertical-align: middle;
+
     &.divide {
       &--left {
         border-left: 2px solid #eceeef;
       }
+    }
+  }
+
+  &--tbodyhover {
+    tbody:hover {
+      border-top: 2px solid #CECECE;
+      border-bottom: 2px solid #CECECE;
     }
   }
 }

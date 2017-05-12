@@ -27,13 +27,18 @@ $next-grey: #E0E0E0;
 $next-mdgrey: #BDBDBD;
 $next-dgrey: #212121;
 $next-teal: #00bfa5;
+$next-teal-highlight: #1DE9B6;
 $next-blue: #0091EA;
+$next-blue-highlight: #00B0FF;
 $next-purple: #6200EA;
+$next-purple-highlight: #651FFF;
 $next-orange: #FF6D00;
+$next-orange-highlight: #FF9100;
 // $next-text: $next-dgrey;
 // $next-bg: #333333;
 // $next-action: $next-orange;
 $next-primary: $next-teal;
+$next-primary-highlight: $next-teal-highlight;
 // $next-secondary: $next-orange;
 
 // Notification colours;
@@ -44,3 +49,9 @@ $next-danger: #F44336;
 // Progress Bar Settings
 $progessbar-height: 3px;
 $progressbar-barwidth: 60%;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:       $next-white;
