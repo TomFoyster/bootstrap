@@ -9255,7 +9255,7 @@ body {
   font-size: 30px;
 }
 
-.papermaterial {
+.next-card {
   background: #FFF;
   position: relative;
   padding: 15px 15px 0 15px;
@@ -9269,30 +9269,31 @@ body {
           box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
-.papermaterial__title {
+.next-card__title {
   border-bottom: 1px solid #00bfa5;
   padding: 0 0 5px 0;
   font-size: 17px;
   color: #555;
 }
 
-.papermaterial__title__toggle {
+.next-card__title__toggle {
   float: right;
+  cursor: pointer;
 }
 
-.papermaterial__title--orange {
+.next-card__title--orange {
   border-bottom-color: #FF6D00;
 }
 
-.papermaterial__title--blue {
+.next-card__title--blue {
   border-bottom-color: #0091EA;
 }
 
-.papermaterial--fab {
+.next-card--fab {
   padding-bottom: 25px;
 }
 
-.papermaterial__fab {
+.next-card__fab {
   position: absolute;
   left: calc(50% - 28px);
   bottom: -28px;
@@ -9313,7 +9314,7 @@ body {
   transition: background 0.28s ease-out, box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.papermaterial__fab i {
+.next-card__fab i {
   width: inherit;
   display: inline-block;
   text-align: center;
@@ -9323,7 +9324,7 @@ body {
   font-style: normal;
 }
 
-.papermaterial__fab:active {
+.next-card__fab:active {
   -webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
           box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
   background: #1DE9B6;
@@ -9333,7 +9334,7 @@ body {
   background-color: none;
 }
 
-.papermaterial--alert {
+.next-card--alert {
   padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -9341,12 +9342,12 @@ body {
   display: flex;
 }
 
-.papermaterial--alert .alert__icon,
-.papermaterial--alert .alert__message {
+.next-card--alert .alert__icon,
+.next-card--alert .alert__message {
   float: left;
 }
 
-.papermaterial--alert .alert__icon {
+.next-card--alert .alert__icon {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9359,29 +9360,29 @@ body {
   font-size: 27px;
 }
 
-.papermaterial--alert .alert__message {
+.next-card--alert .alert__message {
   margin: 19px 0 19px 17px;
 }
 
-.papermaterial--alert .alert__message p {
+.next-card--alert .alert__message p {
   margin: 0;
 }
 
-.papermaterial--alert.papermaterial--warning .alert__icon {
+.next-card--alert.next-card--warning .alert__icon {
   background: #ffc107;
 }
 
-.papermaterial--alert.papermaterial--danger .alert__icon {
+.next-card--alert.next-card--danger .alert__icon {
   background: #F44336;
 }
 
-.papermaterial--alert .fa {
+.next-card--alert .fa {
   color: #FFF;
   height: 30px;
   width: 30px;
 }
 
-.page__content--orange .papermaterial__title {
+.page__content--orange .next-card__title {
   border-bottom-color: #FF6D00;
 }
 
@@ -9389,15 +9390,15 @@ body {
   background: #FF6D00;
 }
 
-.page__content--orange .papermaterial__fab {
+.page__content--orange .next-card__fab {
   background: #FF6D00;
 }
 
-.page__content--orange .papermaterial__fab:active {
+.page__content--orange .next-card__fab:active {
   background: #FF9100;
 }
 
-.page__content--blue .papermaterial__title {
+.page__content--blue .next-card__title {
   border-bottom-color: #0091EA;
 }
 
@@ -9405,15 +9406,15 @@ body {
   background: #0091EA;
 }
 
-.page__content--blue .papermaterial__fab {
+.page__content--blue .next-card__fab {
   background: #0091EA;
 }
 
-.page__content--blue .papermaterial__fab:active {
+.page__content--blue .next-card__fab:active {
   background: #00B0FF;
 }
 
-.page__content--purple .papermaterial__title {
+.page__content--purple .next-card__title {
   border-bottom-color: #6200EA;
 }
 
@@ -9421,11 +9422,11 @@ body {
   background: #6200EA;
 }
 
-.page__content--purple .papermaterial__fab {
+.page__content--purple .next-card__fab {
   background: #6200EA;
 }
 
-.page__content--purple .papermaterial__fab:active {
+.page__content--purple .next-card__fab:active {
   background: #FF9100;
 }
 

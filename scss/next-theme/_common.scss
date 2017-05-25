@@ -1,4 +1,4 @@
-// Material Design
+// Next Theme based on Material Design
 
 body {
   padding: 0;
@@ -75,7 +75,7 @@ body {
   }
 }
 
-.papermaterial {
+.next-card {
   background: $next-white;
   position: relative;
   padding: 15px 15px 0 15px;
@@ -146,7 +146,7 @@ body {
 }
 
 
-.papermaterial--alert {
+.next-card--alert {
   padding: 0;
   display: flex;
 
@@ -170,11 +170,11 @@ body {
     margin: 0;
   }
 
-  &.papermaterial--warning .alert__icon {
+  &.next-card--warning .alert__icon {
     background: $next-warning;
   }
 
-  &.papermaterial--danger .alert__icon {
+  &.next-card--danger .alert__icon {
     background: $next-danger;
   }
 
@@ -187,7 +187,7 @@ body {
 }
 
 .page__content--orange {
-  .papermaterial__title {
+  .next-card__title {
     border-bottom-color: $next-orange;
   }
 
@@ -195,7 +195,7 @@ body {
     background: $next-orange;
   }
 
-  .papermaterial__fab {
+  .next-card__fab {
     background: $next-orange;
 
     &:active {
@@ -205,7 +205,7 @@ body {
 }
 
 .page__content--blue {
-  .papermaterial__title {
+  .next-card__title {
     border-bottom-color: $next-blue;
   }
 
@@ -213,7 +213,7 @@ body {
     background: $next-blue;
   }
 
-  .papermaterial__fab {
+  .next-card__fab {
     background: $next-blue;
 
     &:active {
@@ -223,7 +223,7 @@ body {
 }
 
 .page__content--purple {
-  .papermaterial__title {
+  .next-card__title {
     border-bottom-color: $next-purple;
   }
 
@@ -231,7 +231,7 @@ body {
     background: $next-purple;
   }
 
-  .papermaterial__fab {
+  .next-card__fab {
     background: $next-purple;
 
     &:active {
