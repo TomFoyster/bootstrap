@@ -9376,6 +9376,15 @@ body {
   background: #F44336;
 }
 
+.next-card--alert.next-card--information .alert__icon {
+  padding: 10px 13px 10px 17px;
+  background: #03A9F4;
+}
+
+.next-card--alert.next-card--success .alert__icon {
+  background: #4CAF50;
+}
+
 .next-card--alert .fa {
   color: #FFF;
   height: 30px;
