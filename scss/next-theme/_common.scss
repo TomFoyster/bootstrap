@@ -178,6 +178,16 @@ body {
     background: $next-danger;
   }
 
+
+  &.next-card--information .alert__icon {
+    padding: 10px 13px 10px 17px;
+    background: $next-information;
+  }
+
+  &.next-card--success .alert__icon {
+    background: $next-success;
+  }
+
   .fa {
     color: #FFF;
     height: 30px;
