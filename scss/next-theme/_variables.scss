@@ -49,11 +49,12 @@ $next-danger: #F44336;
 
 
 // Progress Bar Settings
-$progessbar-height: 3px;
-$progressbar-barwidth: 60%;
+$progress-height: 4px;
+$progress-bg: $next-lgrey;
+$progress-bar-color: $next-primary;
+$progress-bar-bg: $next-primary;
 
 // Body
-//
 // Settings for the `<body>` element.
 
 $body-bg:       $next-white;
