@@ -4925,7 +4925,7 @@ a.badge:focus, a.badge:hover {
 
 @-webkit-keyframes progress-bar-stripes {
   from {
-    background-position: 1rem 0;
+    background-position: 4px 0;
   }
   to {
     background-position: 0 0;
@@ -4934,7 +4934,7 @@ a.badge:focus, a.badge:hover {
 
 @-o-keyframes progress-bar-stripes {
   from {
-    background-position: 1rem 0;
+    background-position: 4px 0;
   }
   to {
     background-position: 0 0;
@@ -4943,7 +4943,7 @@ a.badge:focus, a.badge:hover {
 
 @keyframes progress-bar-stripes {
   from {
-    background-position: 1rem 0;
+    background-position: 4px 0;
   }
   to {
     background-position: 0 0;
@@ -4957,25 +4957,25 @@ a.badge:focus, a.badge:hover {
   display: flex;
   overflow: hidden;
   font-size: 0.75rem;
-  line-height: 1rem;
+  line-height: 4px;
   text-align: center;
-  background-color: #eceeef;
+  background-color: #F5F5F5;
   border-radius: 0.25rem;
 }
 
 .progress-bar {
-  height: 1rem;
-  line-height: 1rem;
-  color: #fff;
-  background-color: #0275d8;
+  height: 4px;
+  line-height: 4px;
+  color: #00bfa5;
+  background-color: #00bfa5;
 }
 
 .progress-bar-striped {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  -webkit-background-size: 1rem 1rem;
-          background-size: 1rem 1rem;
+  -webkit-background-size: 4px 4px;
+          background-size: 4px 4px;
 }
 
 .progress-bar-animated {
@@ -9739,6 +9739,12 @@ body {
 
 .bg-slightly-faded {
   background-color: #fcfcfc;
+}
+
+.progress-bar {
+  -webkit-transition: width .6s ease;
+  -o-transition: width .6s ease;
+  transition: width .6s ease;
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
