@@ -1,5 +1,9 @@
 // Next Theme based on Material Design
 
+html, body {
+  height: 100%;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -11,7 +15,9 @@ body {
 
 .page {
   width: 100%;
-  height: 100%;
+  height: -moz-calc(100% - 101px);
+  height: -webkit-calc(100% - 101px);
+  height: calc(100% - 101px;
   float: left;
   position: fixed;
 
@@ -254,6 +260,23 @@ body {
   position: fixed;
   bottom: 0;
   right: 0;
+
+  &--large {
+    background: #000;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #FFF;
+    padding: 10px 10px 5px 10px;
+
+    p {
+      margin-bottom: 0px;
+    }
+
+    .footer__right {
+      text-align: right;
+    }
+  }
 
   &__env {
     padding: 4px 10px 4px 4px;
