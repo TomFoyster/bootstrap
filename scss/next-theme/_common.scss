@@ -15,9 +15,9 @@ body {
 
 .page {
   width: 100%;
-  height: -moz-calc(100% - 101px);
-  height: -webkit-calc(100% - 101px);
-  height: calc(100% - 101px;
+  height: -moz-calc(100% - 56px);
+  height: -webkit-calc(100% - 56px);
+  height: calc(100% - 56px;
   float: left;
   position: fixed;
 
@@ -67,7 +67,7 @@ body {
   &__content {
     padding: 20px;
     overflow-y: auto;
-    height: calc(100% - 96px);
+    height: 100%;
 
     &--menu {
       width: calc(100% - 200px);
@@ -144,6 +144,14 @@ body {
       box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
       background: $next-primary-highlight;
     }
+  }
+
+  &__image {
+    max-height: 600px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
   }
 }
 

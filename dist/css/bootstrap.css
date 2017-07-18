@@ -9188,7 +9188,7 @@ body {
 
 .page {
   width: 100%;
-  height: calc(100% - 101px);
+  height: calc(100% - 56px);
   float: left;
   position: fixed;
 }
@@ -9246,7 +9246,7 @@ body {
 .page__content {
   padding: 20px;
   overflow-y: auto;
-  height: calc(100% - 96px);
+  height: 100%;
 }
 
 .page__content--menu {
@@ -9332,6 +9332,14 @@ body {
   -webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
           box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
   background: #1DE9B6;
+}
+
+.next-card__image {
+  max-height: 600px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
 }
 
 .jumbotron {
@@ -9477,35 +9485,71 @@ body {
   margin: 0;
 }
 
+/*
+TODO:- Tidy these styles to remove the different versions once a decision has
+been made on which direction this goes.
+*/
 .navbar-brand__custom {
   padding: 16px 8px;
 }
 
-.navbar__jump__username {
+.navbar__jump--two {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.navbar__jump--two .navbar__jump__regioninfo {
+  margin: 0;
+  width: 350px;
+}
+
+.navbar__jump--two .navbar__jump__regioninfo__item {
+  font-size: 12px;
+  float: left;
+  width: 50%;
+  color: rgba(255, 255, 255, 0.5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__jump__username, .navbar__jump__datetime {
   color: #FFF;
+  margin: 0 10px;
 }
 
 .navbar-nav__custom {
   padding-top: 10px;
 }
 
-.navbar-nav__custom .nav-item {
+.navbar-nav__custom .nav-item, .navbar-nav__custom2 .nav-item {
   position: relative;
 }
 
-.navbar-nav__custom .nav-item .nav-link {
+.navbar-nav__custom .nav-item .nav-link, .navbar-nav__custom2 .nav-item .nav-link {
   padding: 10px 20px;
 }
 
-.navbar-nav__custom .nav-item:hover .nav-link {
+.navbar-nav__custom .nav-item:hover .nav-link, .navbar-nav__custom2 .nav-item:hover .nav-link {
   background: #4d8958;
-}
-
-.navbar-nav__custom .nav-item.active .nav-link {
   color: #FFF;
 }
 
-.navbar-nav__custom .nav-item .nav-item__submenu {
+.navbar-nav__custom .nav-item.active .nav-link, .navbar-nav__custom2 .nav-item.active .nav-link {
+  color: #FFF;
+}
+
+.navbar-nav__custom .nav-item .nav-item__submenu, .navbar-nav__custom2 .nav-item .nav-item__submenu {
   position: absolute;
   display: none;
   width: 100%;
@@ -9513,7 +9557,7 @@ body {
           box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-nav__custom .nav-item .nav-item__submenu:after {
+.navbar-nav__custom .nav-item .nav-item__submenu:after, .navbar-nav__custom2 .nav-item .nav-item__submenu:after {
   content: '';
   width: 10px;
   height: 10px;
@@ -9528,7 +9572,7 @@ body {
      transform: rotate(45deg);
 }
 
-.navbar-nav__custom .nav-item:hover .nav-item__submenu {
+.navbar-nav__custom .nav-item:hover .nav-item__submenu, .navbar-nav__custom2 .nav-item:hover .nav-item__submenu {
   display: block;
   background: #FFF;
   z-index: 1;
@@ -9536,7 +9580,7 @@ body {
   padding: 0;
 }
 
-.navbar-nav__custom .nav-item:hover .nav-item__submenu .nav-item__subitem .nav-link {
+.navbar-nav__custom .nav-item:hover .nav-item__submenu .nav-item__subitem .nav-link, .navbar-nav__custom2 .nav-item:hover .nav-item__submenu .nav-item__subitem .nav-link {
   background: #FFF;
   color: #4d8958;
 }
