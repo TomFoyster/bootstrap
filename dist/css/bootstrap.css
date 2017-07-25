@@ -9191,6 +9191,11 @@ body {
   height: calc(100% - 56px);
   float: left;
   position: fixed;
+  overflow-y: auto;
+}
+
+.page--largeheader {
+  height: calc(100% - 93px);
 }
 
 .page__menu {
@@ -9244,9 +9249,11 @@ body {
 }
 
 .page__content {
-  padding: 20px;
-  overflow-y: auto;
-  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  min-height: 100%;
+  height: auto;
 }
 
 .page__content--menu {
@@ -9456,9 +9463,9 @@ body {
 }
 
 .footer {
-  position: fixed;
-  bottom: 0;
-  right: 0;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
 }
 
 .footer--large {
@@ -9485,7 +9492,7 @@ body {
 }
 
 .footer__env {
-  padding: 4px 10px 4px 4px;
+  padding: 4px 10px 4px 0;
   margin: 0;
 }
 
