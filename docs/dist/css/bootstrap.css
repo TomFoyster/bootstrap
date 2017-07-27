@@ -9543,8 +9543,16 @@ been made on which direction this goes.
   padding-top: 10px;
 }
 
+.navbar-nav__custom, .navbar-nav__custom2 {
+  width: 100%;
+}
+
 .navbar-nav__custom .nav-item, .navbar-nav__custom2 .nav-item {
   position: relative;
+}
+
+.navbar-nav__custom .nav-item--right, .navbar-nav__custom2 .nav-item--right {
+  margin-left: auto;
 }
 
 .navbar-nav__custom .nav-item .nav-link, .navbar-nav__custom2 .nav-item .nav-link {
@@ -9581,6 +9589,20 @@ been made on which direction this goes.
   /* Chrome, Safari, Opera */
   -o-transform: rotate(45deg);
      transform: rotate(45deg);
+}
+
+.navbar-nav__custom .nav-item .nav-item__submenu--info, .navbar-nav__custom2 .nav-item .nav-item__submenu--info {
+  width: 300px;
+  right: 0;
+}
+
+.navbar-nav__custom .nav-item .nav-item__submenu--info:after, .navbar-nav__custom2 .nav-item .nav-item__submenu--info:after {
+  right: 23px;
+  left: initial;
+}
+
+.navbar-nav__custom .nav-item .nav-infoitem, .navbar-nav__custom2 .nav-item .nav-infoitem {
+  padding: 5px 10px;
 }
 
 .navbar-nav__custom .nav-item:hover .nav-item__submenu, .navbar-nav__custom2 .nav-item:hover .nav-item__submenu {
@@ -9636,21 +9658,32 @@ been made on which direction this goes.
   opacity: 0.7;
 }
 
-.button:last-child .button__input {
+.button__input--header {
+  padding: 6px 10px;
+  margin: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0;
+  min-width: 0;
+  background: #4d8958;
+  color: #FFF;
+}
+
+.button:last-child .button__input:not(.button__input--header) {
   color: #FFF;
   font-weight: bold;
   background: #00bfa5;
 }
 
-.button:last-child .button__input.button__input--blue {
+.button:last-child .button__input:not(.button__input--header).button__input--blue {
   background: #0091EA;
 }
 
-.button:last-child .button__input.button__input--orange {
+.button:last-child .button__input:not(.button__input--header).button__input--orange {
   background: #FF6D00;
 }
 
-.button:last-child .button__input.button__input--purple {
+.button:last-child .button__input:not(.button__input--header).button__input--purple {
   background: #6200EA;
 }
 
