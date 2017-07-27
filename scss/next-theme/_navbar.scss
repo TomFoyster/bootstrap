@@ -41,15 +41,21 @@ been made on which direction this goes.
   }
 
   &-nav__custom, &-nav__custom2 {
+    width: 100%;
+
     .nav-item {
       position: relative;
+
+      &--right {
+        margin-left: auto;
+      }
 
       .nav-link {
         padding: 10px 20px;
       }
 
       &:hover .nav-link {
-        background: #4d8958;
+        background: $next-instore-green;
         color: $next-white;
       }
 
@@ -70,12 +76,25 @@ been made on which direction this goes.
           position: absolute;
           top: -5px;
           left: calc(50% - 5px);
-          background: #4d8958;
+          background: $next-instore-green;
           -ms-transform: rotate(45deg); /* IE 9 */
           -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
           transform: rotate(45deg);
         }
 
+        &--info {
+          width: 300px;
+          right: 0;
+
+          &:after {
+            right: 23px;
+            left: initial;
+          }
+        }
+      }
+
+      .nav-infoitem {
+        padding: 5px 10px;
       }
 
       &:hover {
@@ -88,7 +107,7 @@ been made on which direction this goes.
 
           .nav-item__subitem .nav-link {
             background: $next-white;
-            color: #4d8958;
+            color: $next-instore-green;
           }
         }
       }
