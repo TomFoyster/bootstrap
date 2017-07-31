@@ -1,5 +1,9 @@
 // Progress Bar Animation
 
+.progress {
+  border-radius: 0;
+}
+
 .progress-bar {
   transition: width .6s ease;
 }

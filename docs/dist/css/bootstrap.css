@@ -9809,12 +9809,8 @@ been made on which direction this goes.
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23388E3C' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
 }
 
-.customTable thead th {
+.customTable thead tr th {
   border: none;
-}
-
-.customTable--selectable tbody tr {
-  cursor: pointer;
 }
 
 .customTable thead tr th.spanHeader {
@@ -9837,6 +9833,23 @@ been made on which direction this goes.
   padding: 0 5px;
   z-index: 1;
   position: relative;
+}
+
+.customTable thead tr th .order {
+  cursor: pointer;
+}
+
+.customTable thead tr th .order__icon {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.customTable thead tr th .order__icon--muted {
+  opacity: 0.5;
+}
+
+.customTable--selectable tbody tr {
+  cursor: pointer;
 }
 
 .customTable.table-hover tbody tr:hover {
@@ -9918,6 +9931,10 @@ been made on which direction this goes.
 
 .bg-slightly-faded {
   background-color: #fcfcfc;
+}
+
+.progress {
+  border-radius: 0;
 }
 
 .progress-bar {
