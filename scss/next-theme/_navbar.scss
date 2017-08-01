@@ -63,11 +63,23 @@ been made on which direction this goes.
         color: $next-white;
       }
 
-      .nav-item__submenu {
+      &__submenu {
         position: absolute;
         display: none;
         width: 100%;
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        background: $next-white;
+        list-style: none;
+        padding: 0;
+
+        .nav-item__subitem {
+          position: relative;
+
+          .nav-link {
+            background: $next-white;
+            color: $next-instore-green;
+          }
+        }
 
         &:after {
           content: '';
@@ -91,6 +103,17 @@ been made on which direction this goes.
             left: initial;
           }
         }
+
+        &__submenu {
+          position: absolute;
+          display: none;
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+          list-style: none;
+          padding: 0;
+          top: 0;
+          left: calc(100% - 5px);
+          width: 100%;
+        }
       }
 
       .nav-infoitem {
@@ -100,14 +123,13 @@ been made on which direction this goes.
       &:hover {
         .nav-item__submenu {
           display: block;
-          background: $next-white;
           z-index: 1;
-          list-style: none;
-          padding: 0;
 
-          .nav-item__subitem .nav-link {
-            background: $next-white;
-            color: $next-instore-green;
+          .nav-item__subitem:hover {
+            .nav-item__submenu__submenu {
+              display: block;
+              z-index: 1;
+            }
           }
         }
       }
