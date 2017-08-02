@@ -9752,6 +9752,18 @@ a.button__input:hover {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23F57C00' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
 }
 
+.page__content--orange .button:last-child .button__input {
+  background: #FF6D00;
+}
+
+.page__content--blue .button:last-child .button__input {
+  background: #0091EA;
+}
+
+.page__content--purple .button:last-child .button__input {
+  background: #6200EA;
+}
+
 /* Tooltip text */
 .tooltiptext {
   visibility: hidden;

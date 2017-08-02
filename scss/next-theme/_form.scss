@@ -55,7 +55,7 @@
 
 a.button__input {
   display: inline-block;
-  
+
   &:hover {
     text-decoration: none;
   }
@@ -99,6 +99,27 @@ a.button__input {
     }
   }
 }
+
+// Page Colour Overrides
+.page__content--orange {
+  .button:last-child .button__input {
+    background: $next-orange;
+  }
+}
+
+.page__content--blue {
+  .button:last-child .button__input {
+    background: $next-blue;
+  }
+}
+
+.page__content--purple {
+  .button:last-child .button__input {
+    background: $next-purple;
+  }
+}
+
+
 
 /* Tooltip text */
 .tooltiptext {
