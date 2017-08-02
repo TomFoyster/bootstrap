@@ -9662,7 +9662,7 @@ been made on which direction this goes.
   cursor: pointer;
   z-index: 0;
   padding: 0.7em 0.57em;
-  font-family: 'Roboto', 'Noto', sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
           box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
   -webkit-transition: opacity 0.28s ease-out, -webkit-box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
@@ -9706,6 +9706,14 @@ been made on which direction this goes.
 
 .button:last-child .button__input:not(.button__input--header).button__input--purple {
   background: #6200EA;
+}
+
+a.button__input {
+  display: inline-block;
+}
+
+a.button__input:hover {
+  text-decoration: none;
 }
 
 .checkbox--nolabel {
