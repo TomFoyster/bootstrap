@@ -9198,14 +9198,24 @@ body {
   height: calc(100% - 93px);
 }
 
+.page__wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  min-height: 100%;
+}
+
 .page__menu {
   width: 200px;
   background: #E0E0E0;
-  height: 100%;
   border-right: 1px solid #BDBDBD;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  position: inherit;
+  position: relative;
   float: left;
 }
 

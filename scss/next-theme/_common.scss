@@ -28,13 +28,18 @@ body {
     height: calc(100% - 93px);
   }
 
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100%;
+  }
+
   &__menu {
     width: 200px;
     background: $next-grey;
-    height: 100%;
     border-right: 1px solid $next-mdgrey; // Changed from #BDBDBD;
     box-sizing: border-box;
-    position: inherit;
+    position: relative;
     float: left;
 
     &__title {
