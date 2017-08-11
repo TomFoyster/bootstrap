@@ -2,8 +2,11 @@
 
 .progress {
   border-radius: 0;
+  height: 7px;
+  background-color: $next-lgrey;
 }
 
 .progress-bar {
   transition: width .6s ease;
+  height: 7px;
 }
