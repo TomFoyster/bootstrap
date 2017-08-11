@@ -17,6 +17,7 @@ gulp.task('build-styles', ['clean-styles'], function(callback) {
   return runSequence(
     'styles-build',
     'styles-minify',
+    'copy-fonts',
     callback
   )
 });
