@@ -9765,6 +9765,10 @@ a.button__input:hover {
   padding-left: 1.2rem;
 }
 
+.custom-checkbox--disabled {
+  cursor: not-allowed;
+}
+
 .custom-checkbox .custom-control-input:focus ~ .custom-control-indicator.green {
   -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 3px #388E3C;
           box-shadow: 0 0 0 1px #fff, 0 0 0 3px #388E3C;
@@ -9773,6 +9777,10 @@ a.button__input:hover {
 .custom-checkbox .custom-control-input:focus ~ .custom-control-indicator.orange {
   -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 3px #F57C00;
           box-shadow: 0 0 0 1px #fff, 0 0 0 3px #F57C00;
+}
+
+.custom-checkbox .custom-control-input:disabled ~ .custom-control-indicator {
+  background-color: #efefef;
 }
 
 .custom-checkbox .custom-control-input:checked:not(:disabled) ~ .custom-control-indicator.orange {
@@ -9793,6 +9801,10 @@ a.button__input:hover {
 
 .custom-checkbox .custom-control-input:checked:disabled ~ .custom-control-indicator.orange {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23F57C00' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+}
+
+.custom-radio--disabled {
+  cursor: not-allowed;
 }
 
 .page__content--orange .button:last-child .button__input {
