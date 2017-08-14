@@ -63,6 +63,10 @@ been made on which direction this goes.
         color: $next-white;
       }
 
+      &__info__icon {
+        font-size: 20px;
+      }
+
       &__submenu {
         position: absolute;
         display: none;

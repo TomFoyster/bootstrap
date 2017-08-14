@@ -9589,6 +9589,10 @@ been made on which direction this goes.
   color: #FFF;
 }
 
+.navbar-nav__custom .nav-item__info__icon, .navbar-nav__custom2 .nav-item__info__icon {
+  font-size: 20px;
+}
+
 .navbar-nav__custom .nav-item__submenu, .navbar-nav__custom2 .nav-item__submenu {
   position: absolute;
   display: none;
