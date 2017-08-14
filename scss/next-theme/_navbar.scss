@@ -5,6 +5,10 @@ been made on which direction this goes.
 
 .navbar {
 
+  &-collapse {
+    z-index: 2;
+  }
+
   &-brand__custom {
     padding: 16px 8px;
   }
@@ -130,9 +134,18 @@ been made on which direction this goes.
           z-index: 1;
 
           .nav-item__subitem:hover {
+
+            & > a {
+              background: #E8E8E8;
+            }
+
             .nav-item__submenu__submenu {
               display: block;
               z-index: 1;
+
+              .nav-item__subitem_subitem:hover a {
+                background: #E8E8E8;
+              }
             }
           }
         }
