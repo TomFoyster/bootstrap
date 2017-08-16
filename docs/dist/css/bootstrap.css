@@ -9099,44 +9099,14 @@ body {
   background: #FF9100;
 }
 
-.footer {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-}
-
-.footer--large {
-  background: #000;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  color: #FFF;
-  padding: 10px 10px 5px 10px;
-}
-
-.footer--large p {
-  margin-bottom: 0px;
-}
-
-.footer--large .footer__right {
-  text-align: right;
-}
-
-.footer__env {
-  padding: 4px 10px 4px 0;
-  margin: 0;
-}
-
 /*
 TODO:- Tidy these styles to remove the different versions once a decision has
 been made on which direction this goes.
 */
+.navbar {
+  background: #000;
+}
+
 .navbar-collapse {
   z-index: 2;
 }
@@ -9145,7 +9115,7 @@ been made on which direction this goes.
   padding: 16px 8px;
 }
 
-.navbar__jump--two {
+.navbar__jump {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9160,12 +9130,12 @@ been made on which direction this goes.
           justify-content: flex-end;
 }
 
-.navbar__jump--two .navbar__jump__regioninfo {
+.navbar__jump .navbar__jump__regioninfo {
   margin: 0;
   width: 350px;
 }
 
-.navbar__jump--two .navbar__jump__regioninfo__item {
+.navbar__jump .navbar__jump__regioninfo__item {
   font-size: 12px;
   float: left;
   width: 50%;
@@ -9181,39 +9151,36 @@ been made on which direction this goes.
 }
 
 .navbar-nav__custom {
-  padding-top: 10px;
-}
-
-.navbar-nav__custom, .navbar-nav__custom2 {
   width: 100%;
 }
 
-.navbar-nav__custom .nav-item, .navbar-nav__custom2 .nav-item {
+.navbar-nav__custom .nav-item {
   position: relative;
 }
 
-.navbar-nav__custom .nav-item--right, .navbar-nav__custom2 .nav-item--right {
+.navbar-nav__custom .nav-item--right {
   margin-left: auto;
 }
 
-.navbar-nav__custom .nav-item .nav-link, .navbar-nav__custom2 .nav-item .nav-link {
+.navbar-nav__custom .nav-item .nav-link {
   padding: 10px 20px;
+  color: rgba(255, 255, 255, 0.5);
 }
 
-.navbar-nav__custom .nav-item:hover .nav-link, .navbar-nav__custom2 .nav-item:hover .nav-link {
+.navbar-nav__custom .nav-item:hover .nav-link {
   background: #4d8958;
   color: #FFF;
 }
 
-.navbar-nav__custom .nav-item.active .nav-link, .navbar-nav__custom2 .nav-item.active .nav-link {
+.navbar-nav__custom .nav-item.active .nav-link {
   color: #FFF;
 }
 
-.navbar-nav__custom .nav-item__info__icon, .navbar-nav__custom2 .nav-item__info__icon {
+.navbar-nav__custom .nav-item__info__icon {
   font-size: 20px;
 }
 
-.navbar-nav__custom .nav-item__submenu, .navbar-nav__custom2 .nav-item__submenu {
+.navbar-nav__custom .nav-item__submenu {
   position: absolute;
   display: none;
   width: 100%;
@@ -9224,16 +9191,16 @@ been made on which direction this goes.
   padding: 0;
 }
 
-.navbar-nav__custom .nav-item__submenu .nav-item__subitem, .navbar-nav__custom2 .nav-item__submenu .nav-item__subitem {
+.navbar-nav__custom .nav-item__submenu .nav-item__subitem {
   position: relative;
 }
 
-.navbar-nav__custom .nav-item__submenu .nav-item__subitem .nav-link, .navbar-nav__custom2 .nav-item__submenu .nav-item__subitem .nav-link {
+.navbar-nav__custom .nav-item__submenu .nav-item__subitem .nav-link {
   background: #FFF;
   color: #4d8958;
 }
 
-.navbar-nav__custom .nav-item__submenu:after, .navbar-nav__custom2 .nav-item__submenu:after {
+.navbar-nav__custom .nav-item__submenu:after {
   content: '';
   width: 10px;
   height: 10px;
@@ -9248,17 +9215,17 @@ been made on which direction this goes.
      transform: rotate(45deg);
 }
 
-.navbar-nav__custom .nav-item__submenu--info, .navbar-nav__custom2 .nav-item__submenu--info {
+.navbar-nav__custom .nav-item__submenu--info {
   width: 300px;
   right: 0;
 }
 
-.navbar-nav__custom .nav-item__submenu--info:after, .navbar-nav__custom2 .nav-item__submenu--info:after {
+.navbar-nav__custom .nav-item__submenu--info:after {
   right: 23px;
   left: initial;
 }
 
-.navbar-nav__custom .nav-item__submenu__submenu, .navbar-nav__custom2 .nav-item__submenu__submenu {
+.navbar-nav__custom .nav-item__submenu__submenu {
   position: absolute;
   display: none;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
@@ -9270,25 +9237,25 @@ been made on which direction this goes.
   width: 100%;
 }
 
-.navbar-nav__custom .nav-item .nav-infoitem, .navbar-nav__custom2 .nav-item .nav-infoitem {
+.navbar-nav__custom .nav-item .nav-infoitem {
   padding: 5px 10px;
 }
 
-.navbar-nav__custom .nav-item:hover .nav-item__submenu, .navbar-nav__custom2 .nav-item:hover .nav-item__submenu {
+.navbar-nav__custom .nav-item:hover .nav-item__submenu {
   display: block;
   z-index: 1;
 }
 
-.navbar-nav__custom .nav-item:hover .nav-item__submenu .nav-item__subitem:hover > a, .navbar-nav__custom2 .nav-item:hover .nav-item__submenu .nav-item__subitem:hover > a {
+.navbar-nav__custom .nav-item:hover .nav-item__submenu .nav-item__subitem:hover > a {
   background: #E8E8E8;
 }
 
-.navbar-nav__custom .nav-item:hover .nav-item__submenu .nav-item__subitem:hover .nav-item__submenu__submenu, .navbar-nav__custom2 .nav-item:hover .nav-item__submenu .nav-item__subitem:hover .nav-item__submenu__submenu {
+.navbar-nav__custom .nav-item:hover .nav-item__submenu .nav-item__subitem:hover .nav-item__submenu__submenu {
   display: block;
   z-index: 1;
 }
 
-.navbar-nav__custom .nav-item:hover .nav-item__submenu .nav-item__subitem:hover .nav-item__submenu__submenu .nav-item__subitem_subitem:hover a, .navbar-nav__custom2 .nav-item:hover .nav-item__submenu .nav-item__subitem:hover .nav-item__submenu__submenu .nav-item__subitem_subitem:hover a {
+.navbar-nav__custom .nav-item:hover .nav-item__submenu .nav-item__subitem:hover .nav-item__submenu__submenu .nav-item__subitem_subitem:hover a {
   background: #E8E8E8;
 }
 
