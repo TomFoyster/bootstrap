@@ -281,31 +281,3 @@ body {
     }
   }
 }
-
-.footer {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-
-  &--large {
-    background: #000;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    color: #FFF;
-    padding: 10px 10px 5px 10px;
-
-    p {
-      margin-bottom: 0px;
-    }
-
-    .footer__right {
-      text-align: right;
-    }
-  }
-
-  &__env {
-    padding: 4px 10px 4px 0;
-    margin: 0;
-  }
-}
