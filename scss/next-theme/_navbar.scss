@@ -4,6 +4,7 @@ been made on which direction this goes.
 */
 
 .navbar {
+  background: $black;
 
   &-collapse {
     z-index: 2;
@@ -56,6 +57,7 @@ been made on which direction this goes.
 
       .nav-link {
         padding: 10px 20px;
+        color: rgba(255,255,255,.5);
       }
 
       &:hover .nav-link {
