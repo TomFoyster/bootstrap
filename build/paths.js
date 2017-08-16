@@ -9,7 +9,7 @@ module.exports = {
   cssOut: outputRoot + 'css/',
   jsOut: outputRoot + 'js/',
   output: outputRoot,
-  scssLintConfig: 'scss/.scss-lint.yml',
+  scssLintConfig: '.scss-lint.yml',
   jekyllConfig: '_config.yml',
   fontSource: 'fonts/',
   fontDest: outputRoot + 'fonts/'

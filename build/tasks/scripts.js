@@ -68,7 +68,7 @@ gulp.task('scripts-dist-build', function() {
 
 gulp.task('scripts-dist-babel', function() {
   return gulp.src(paths.jsOut + pkg.name + '.js')
-    .pipe($.babel({extends: '../../js/.babelrc'}))
+    .pipe($.babel({extends: '../../.babelrc'}))
     .pipe($.insert.wrap(bannerInsert, footerInsert))
     .pipe(gulp.dest(paths.jsOut))
     .pipe($.uglify({output: {comments: /^!/i}}))
