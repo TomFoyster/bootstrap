@@ -14,7 +14,7 @@ been made on which direction this goes.
     padding: 16px 8px;
   }
 
-  &__jump--two {
+  &__jump {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -40,12 +40,7 @@ been made on which direction this goes.
     margin: 0 10px;
   }
 
-
   &-nav__custom {
-    padding-top: 10px;
-  }
-
-  &-nav__custom, &-nav__custom2 {
     width: 100%;
 
     .nav-item {
