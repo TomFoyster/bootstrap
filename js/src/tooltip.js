@@ -236,11 +236,6 @@ const Tooltip = (($) => {
       }
       this._popper        = null
 
-      this.element = null;
-      this.config = null;
-      this.tip = null;
-    };
-
       this.element = null
       this.config  = null
       this.tip     = null
@@ -348,7 +343,7 @@ const Tooltip = (($) => {
           complete()
         }
       }
-    };
+    }
 
     hide(callback) {
       const tip       = this.getTipElement()
@@ -456,7 +451,6 @@ const Tooltip = (($) => {
 
       return title
     }
-
 
 
     // private

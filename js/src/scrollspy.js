@@ -91,25 +91,6 @@ const ScrollSpy = (($) => {
       this._process()
     }
 
-      _classCallCheck(this, ScrollSpy);
-
-    constructor(element, config) {
-      this._element       = element
-      this._scrollElement = element.tagName === 'BODY' ? window : element
-      this._config        = this._getConfig(config)
-      this._selector      = `${this._config.target} ${Selector.NAV_LINKS},`
-                          + `${this._config.target} ${Selector.DROPDOWN_ITEMS}`
-      this._offsets       = []
-      this._targets       = []
-      this._activeTarget  = null
-      this._scrollHeight  = 0
-
-      $(this._scrollElement).on(Event.SCROLL, (event) => this._process(event))
-
-      this.refresh()
-      this._process()
-    }
-
 
     // getters
 
