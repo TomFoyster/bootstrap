@@ -1,7 +1,7 @@
 {
   "name": "bootstrap",
   "description": "A Gulp powered implementation of Bootstrap 4 for Next Retail Plc",
-  "version": "4.0.0-alpha6-next-material-theme-0.0.26",
+  "version": "4.0.0-beta-next-material-theme-0.0.1",
   "homepage": "https://getbootstrap.com",
   "author": "The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)",
   "main": "dist/js/bootstrap",
