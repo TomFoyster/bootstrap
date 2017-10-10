@@ -8853,6 +8853,10 @@ body {
   text-align: center;
 }
 
+.page__menu__image {
+  margin: 10px;
+}
+
 .page__menu__item {
   display: -webkit-box;
   display: -webkit-flex;
