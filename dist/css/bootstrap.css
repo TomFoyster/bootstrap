@@ -9320,6 +9320,11 @@ been made on which direction this goes.
   color: #FFF;
 }
 
+.button__input:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
 .button:last-child .button__input:not(.button__input--header) {
   color: #FFF;
   font-weight: bold;

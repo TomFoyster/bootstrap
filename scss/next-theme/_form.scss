@@ -43,6 +43,11 @@
       background: $next-instore-green;
       color: $next-white;
     }
+
+    &:disabled{
+      opacity: $disabled-opacity;
+      cursor: not-allowed;
+    }
   }
 
   &:last-child {
